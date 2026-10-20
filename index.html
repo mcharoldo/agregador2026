@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V12.1 · 2º TURNO · central estatística ===== */
+/* ===== V12.2 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1169,6 +1169,27 @@ html[data-theme="dark"] body.v12 .sumDiffPP{background:#f4f7ff!important}
 html[data-theme="dark"] body.v12 .r2Table,html[data-theme="dark"] body.v12 .r2Table tr,html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .tableWrap{background-color:transparent!important}
 html[data-theme="dark"] body.v12 .r2Table th{background:var(--v12-surface2)!important;color:var(--v12-muted)!important}
 html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r2Table th{border-color:var(--v12-line)!important}
+/* V12.2 · pêndulo central no Resumão; Flávio à esquerda em todos os pêndulos */
+body.v12 .sumDuel{grid-template-columns:1fr minmax(260px,330px) 1fr!important;align-items:center!important;gap:16px!important}
+body.v12 .sumGaugeBox{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0}
+body.v12 .sumGaugeBox svg{width:100%;height:auto;max-width:330px}
+body.v12 .sumGaugeBox .r2Needle path,body.v12 .sumGaugeBox circle:first-of-type{fill:#e7ecf6}
+body.v12 .sumGaugeBox svg text{fill:#c9d5f0!important}
+body.v12 .sumGaugeBox svg text[fill="#2563eb"]{fill:#8fb0ff!important}body.v12 .sumGaugeBox svg text[fill="#dc2626"]{fill:#ff9aa5!important}
+body.v12 .sumGaugeCap{margin-top:-2px;color:#c9d5f0;font-size:13.6px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;text-align:center}
+body.v12 .sumCand{padding:18px 20px!important}
+body.v12 .r2GaugeVal .blue{order:1;text-align:left!important}body.v12 .r2GaugeVal .r2GaugeCenter{order:2}body.v12 .r2GaugeVal .red{order:3;text-align:right!important}
+body.v12 .r2PendVal .pollBlue{order:1}body.v12 .r2PendVal .pollRed{order:2}body.v12 .r2PendVal{display:flex;justify-content:space-between}
+@media (max-width:760px){
+  body.v12 .sumDuel{grid-template-columns:1fr 1fr!important;gap:10px!important}
+  body.v12 .sumGaugeBox{order:-1;grid-column:1/-1}
+  body.v12 .sumCand{padding:14px 12px!important}
+  body.v12 .sumCandPct{font-size:34px!important}
+  body.v12 .sumCandVotes strong{font-size:18px!important}
+  body.v12 .sumCandName{font-size:15.3px!important}
+}
+body.v12 .sumDuel{grid-template-columns:1fr minmax(280px,380px) 1fr!important}body.v12 .sumGaugeBox svg{max-width:380px}
+@media (max-width:760px){body.v12 .sumCrown{display:none!important}}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1177,7 +1198,7 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V12.1 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V12.2 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1187,10 +1208,10 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V12.1 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V12.2 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V12.1 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V12.2 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1300,7 +1321,7 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V12.1 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V12.2 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -2227,7 +2248,7 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V12.1 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V12.2 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2283,7 +2304,7 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V12.1 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V12.2 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2300,7 +2321,7 @@ html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V12.1 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V12.2 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -2901,7 +2922,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V12.1 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V12.2 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3584,7 +3605,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V12.1 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V12.1 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V12.1 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V12.2 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V12.2 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V12.2 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3666,7 +3687,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V12.1 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V12.2 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -3926,17 +3947,18 @@ function scale5(v){/* 0 = Lula forte (vermelho) · 1 = Flávio forte (azul) */co
 function arcPt(v,r){const th=Math.PI*(1-v);return[GAUGE.cx+r*Math.cos(th),GAUGE.cy-r*Math.sin(th)]}
 function arcPath(v0,v1,r0,r1){const[a,b]=arcPt(v0,r1),[c,d]=arcPt(v1,r1),[e,f]=arcPt(v1,r0),[g,h]=arcPt(v0,r0);return`M${a},${b} A${r1},${r1} 0 0 1 ${c},${d} L${e},${f} A${r0},${r0} 0 0 0 ${g},${h} Z`}
 function drawGauge(svg,o){
-  if(!svg)return;const k=o.fs||1;let s='';const seg=48;
-  for(let i=0;i<seg;i++){const v0=i/seg,v1=(i+1)/seg;s+=`<path d="${arcPath(v0,v1+.002,118,160)}" fill="${scale5((v0+v1)/2)}"/>`}
-  if(o.band){s+=`<path d="${arcPath(clamp(o.band[0],0,1),clamp(o.band[1],0,1),112,166)}" fill="rgba(15,23,42,.16)" stroke="#0b1220" stroke-opacity=".4" stroke-dasharray="4 3"/>`}
-  (o.ticks||[]).forEach(t=>{const[x1,y1]=arcPt(t.v,112),[x2,y2]=arcPt(t.v,102),[tx,ty]=arcPt(t.v,84);s+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#94a3b8" stroke-width="2"/><text x="${tx}" y="${ty+5}" text-anchor="middle" font-size="${14*k}" font-weight="800" fill="#475569">${E(t.l)}</text>`});
-  s+=`<text x="${GAUGE.cx-196}" y="${GAUGE.cy+30}" font-size="${16*k}" font-weight="900" fill="#dc2626">${E(o.left)}</text><text x="${GAUGE.cx+196}" y="${GAUGE.cy+30}" text-anchor="end" font-size="${16*k}" font-weight="900" fill="#2563eb">${E(o.right)}</text>`;
-  s+=`<g class="r2Needle" id="${svg.id}-needle" style="transform-origin:${GAUGE.cx}px ${GAUGE.cy}px;transform:rotate(${(clamp(o.v,0,1)-.5)*180}deg)"><path d="M${GAUGE.cx-6},${GAUGE.cy} L${GAUGE.cx},${GAUGE.cy-152} L${GAUGE.cx+6},${GAUGE.cy} Z" fill="#0b1220"/></g><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="12" fill="#0b1220"/><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="4.5" fill="#fff"/>`;
+  /* V12.2 · Flávio à esquerda (azul) e Lula à direita (vermelho) em todos os pêndulos: espelha a escala 0..1 (0 = Lula, 1 = Flávio) */
+  if(!svg)return;const k=o.fs||1,M=x=>1-x;let s='';const seg=48;
+  for(let i=0;i<seg;i++){const v0=i/seg,v1=(i+1)/seg;s+=`<path d="${arcPath(v0,v1+.002,118,160)}" fill="${scale5(M((v0+v1)/2))}"/>`}
+  if(o.band){const a=M(clamp(o.band[1],0,1)),b=M(clamp(o.band[0],0,1));s+=`<path d="${arcPath(Math.min(a,b),Math.max(a,b),112,166)}" fill="rgba(15,23,42,.16)" stroke="#0b1220" stroke-opacity=".4" stroke-dasharray="4 3"/>`}
+  (o.ticks||[]).forEach(t=>{const p=M(t.v),[x1,y1]=arcPt(p,112),[x2,y2]=arcPt(p,102),[tx,ty]=arcPt(p,84);s+=`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#94a3b8" stroke-width="2"/><text x="${tx}" y="${ty+5}" text-anchor="middle" font-size="${14*k}" font-weight="800" fill="#475569">${E(t.l)}</text>`});
+  s+=`<text x="${GAUGE.cx-196}" y="${GAUGE.cy+30}" font-size="${16*k}" font-weight="900" fill="#2563eb">${E(o.right)}</text><text x="${GAUGE.cx+196}" y="${GAUGE.cy+30}" text-anchor="end" font-size="${16*k}" font-weight="900" fill="#dc2626">${E(o.left)}</text>`;
+  s+=`<g class="r2Needle" id="${svg.id}-needle" style="transform-origin:${GAUGE.cx}px ${GAUGE.cy}px;transform:rotate(${(M(clamp(o.v,0,1))-.5)*180}deg)"><path d="M${GAUGE.cx-6},${GAUGE.cy} L${GAUGE.cx},${GAUGE.cy-152} L${GAUGE.cx+6},${GAUGE.cy} Z" fill="#0b1220"/></g><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="12" fill="#0b1220"/><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="4.5" fill="#fff"/>`;
   svg.setAttribute('viewBox','-10 0 420 245');svg.innerHTML=s;
 }
 const swing={items:{},timer:null};
 function setSwing(id,center,lo,hi){swing.items[id]={center,lo,hi};if(!swing.timer&&!matchMedia('(prefers-reduced-motion: reduce)').matches)swing.timer=setInterval(tickSwing,1100)}
-function tickSwing(){if(document.hidden)return;for(const[id,o]of Object.entries(swing.items)){const n=document.getElementById(id+'-needle');if(!n)continue;const r=(Math.random()+Math.random()+Math.random())/3,v=o.lo+(o.hi-o.lo)*r;n.style.transform=`rotate(${(clamp(v,0,1)-.5)*180}deg)`}}
+function tickSwing(){if(document.hidden)return;for(const[id,o]of Object.entries(swing.items)){const n=document.getElementById(id+'-needle');if(!n)continue;const r=(Math.random()+Math.random()+Math.random())/3,v=o.lo+(o.hi-o.lo)*r;n.style.transform=`rotate(${(.5-clamp(v,0,1))*180}deg)`}}
 /* gráficos em pixels reais: largura = largura do cartão */
 function cv(svg,H){if(!svg)return 0;const w=Math.max(280,Math.round((svg.parentElement&&svg.parentElement.getBoundingClientRect().width)||0)||640);svg.setAttribute('viewBox',`0 0 ${w} ${H}`);svg.style.height=H+'px';svg.setAttribute('width','100%');return w}
 const T=(x,y,t,o={})=>`<text x="${x}" y="${y}" font-size="${o.fs||FS}" ${o.a?`text-anchor="${o.a}"`:''} font-weight="${o.w||600}" fill="${o.c||'#64748b'}">${E(t)}</text>`;
@@ -5685,17 +5707,17 @@ function renderSum(){
 const lead=pf>=.5?'F':'L',tie=p<.55,pair=sumPair(pf);
   const card=(k)=>{const F=k==='F',ch=F?pf:1-pf,vs=F?100-R.med:R.med,c1=F?'#60a5fa':'#f87171',c2=F?'#1d4ed8':'#b91c1c',win=!tie&&lead===k;
     return`<div class="sumCand ${F?'blue':'red'}${win?' lead':''}">${win?'<span class="sumCrown">★ FAVORITO</span>':''}
-      ${thermo(ch,c1,c2,'sumG'+k)}
       <div class="sumCandTxt"><span class="sumCandParty">${F?'PL':'PT'}</span><b class="sumCandName">${F?'Flávio Bolsonaro':'Lula'}</b>
         <strong class="sumCandPct">${F?pair[0]:pair[1]}</strong><small>chance de vitória</small>
         <div class="sumCandVote"><span>Votos válidos (projeção)</span><b>${P(vs,1)}</b><div class="sumMini"><i style="width:${Math.max(0,Math.min(100,vs))}%"></i></div></div>
         <div class="sumCandVotes"><span>Votos projetados</span><strong>${nf(vs/100*TT/1e6,1)} mi</strong><small>≈ ${INT(Math.round(vs/100*TT/1e3)*1e3)} votos</small></div></div></div>`};
   $('sumVerdict').innerHTML=`<div class="sumPhase">${E(ph)}</div><div class="sumWho"><span>${/definido|matematic|eleito/i.test(lvl||'')?'Vencedor pela apuração':'Provável vencedor'}</span><strong>${tie?'Disputa aberta':who}</strong><em>${E(lvl)}</em></div>
-    <div class="sumDuel">${card('F')}<div class="sumVs">VS</div>${card('L')}</div>
+    <div class="sumDuel">${card('F')}<div class="sumGaugeBox"><svg class="r2Gauge" id="sumGauge" viewBox="-10 0 420 245" aria-label="Pêndulo da chance de vitória"></svg><div class="sumGaugeCap">${tie?'disputa aberta':(lead==='F'?'Flávio':'Lula')+' favorito'} · chance de vitória</div></div>${card('L')}</div>
     ${(()=>{const fs=100-R.med,dpp=Math.abs(2*fs-100),wF=fs>=50,wn=wF?'Flávio':'Lula',ls=wF?'Lula':'Flávio',dv=dpp/100*TT,lo=Math.abs(2*(100-R.q.p90)-100),hi=Math.abs(2*(100-R.q.p10)-100),cross=(100-R.q.p90)<50&&(100-R.q.p10)>50;
       return`<div class="sumDiff ${wF?'blue':'red'}"><div class="sumDiffMain"><span>Diferença projetada · ${wn} na frente</span><div class="sumDiffRow"><div class="sumDiffVotes"><strong>${wn} +${nf(dv/1e6,2)} mi</strong><b>≈ ${INT(Math.round(dv/1e3)*1e3)} votos</b></div><div class="sumDiffPP"><strong>+${nf(dpp,1)}</strong><small>pontos percentuais</small></div></div><em>${wn} ${P(wF?fs:100-fs,1)} × ${ls} ${P(wF?100-fs:fs,1)} dos votos válidos</em></div>
         <div class="sumDiffSide"><div><span>Total de votos válidos projetado</span><b>${nf(TT/1e6,1)} mi</b></div><div><span>Faixa de 80% da diferença</span><b>${cross?'de '+((100-R.q.p90)<50?'Lula':'Flávio')+' +'+nf(((100-R.q.p90)<50?(50-(100-R.q.p90))*2:0)/100*TT/1e6,1)+' mi a Flávio +'+nf(((100-R.q.p10)-50)*2/100*TT/1e6,1)+' mi':wn+' +'+nf(Math.min(lo,hi)/100*TT/1e6,1)+' a +'+nf(Math.max(lo,hi)/100*TT/1e6,1)+' mi'}</b></div></div></div>`})()}
     <div class="sumLine">Faixa de 80% da projeção: Flávio entre ${P(100-R.q.p90,1)} e ${P(100-R.q.p10,1)} dos votos válidos${L?` · ${nf(L.prog,1)}% das seções apuradas`:''}</div>`;
+  try{drawGauge($('sumGauge'),{v:pf,left:'LULA',right:'FLÁVIO',ticks:[{v:.05,l:'95%'},{v:.25,l:'75%'},{v:.5,l:'50%'},{v:.75,l:'75%'},{v:.95,l:'95%'}]});const sdp=Math.sqrt(pf*(1-pf)/10000)+.006;setSwing('sumGauge',pf,clamp(pf-3*sdp,0,1),clamp(pf+3*sdp,0,1))}catch(e){}
   /* termômetros */
   const th=sumThermo();const agree=th.filter(x=>Number.isFinite(x.pf));const nF=agree.filter(x=>x.pf>=.5).length;
   $('sumThermo').innerHTML=th.map(x=>`<div class="sumTh"><div><b>${E(x.n)}</b><small>${E(x.s)}</small></div>${Number.isFinite(x.pf)?`<div class="mkBar" title="Flávio ${P(100*x.pf,1)}"><i style="width:${(100*x.pf).toFixed(1)}%"></i><em></em></div><strong>${P(100*x.pf,0)}</strong>`:'<div class="sumNo">—</div><strong>—</strong>'}</div>`).join('')+
