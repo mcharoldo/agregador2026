@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V11.48 · 2º TURNO · central estatística ===== */
+/* ===== V12.0 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1037,6 +1037,138 @@ img,svg,canvas,video{max-width:100%}
 #newVer{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom));z-index:9000;display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center;max-width:calc(100vw - 24px);background:#0b1638;color:#fff;border:1px solid rgba(34,211,238,.4);border-radius:16px;padding:10px 12px 10px 16px;box-shadow:0 12px 30px rgba(2,6,23,.35);font-weight:700;font-size:14.6px}
 #newVer button{border:0;border-radius:10px;background:#22d3ee;color:#04122b;font-weight:900;padding:8px 14px;cursor:pointer;min-height:36px}
 @media (max-width:560px){#newVer{width:calc(100vw - 24px);justify-content:space-between}}
+
+/* ===================== V12 · refinamento visual (Resumão + estrutura) e modo escuro ===================== */
+:root{
+  --v12-bg:#f4f6fa;--v12-surface:#ffffff;--v12-surface2:#f8fafc;--v12-line:#e5e9f0;--v12-line2:#eef1f6;
+  --v12-text:#0b1324;--v12-muted:#5b6b85;--v12-faint:#8a98ae;
+  --v12-navy:#0b1736;--v12-navy2:#13244f;
+  --v12-F:#2457e6;--v12-F2:#e8efff;--v12-L:#d6293e;--v12-L2:#fdecee;--v12-amber:#d97706;
+  --v12-shadow:0 1px 2px rgba(16,24,40,.04),0 10px 28px -18px rgba(16,24,40,.22);
+  --v12-radius:18px;
+}
+html[data-theme="dark"]{
+  --v12-bg:#070c18;--v12-surface:#0f1729;--v12-surface2:#131d33;--v12-line:#1f2a44;--v12-line2:#18223a;
+  --v12-text:#e7ecf6;--v12-muted:#9aa8c2;--v12-faint:#6f7e99;
+  --v12-navy:#0b1430;--v12-navy2:#142250;
+  --v12-F:#6b93ff;--v12-F2:#16244a;--v12-L:#ff6a7a;--v12-L2:#3a1620;--v12-amber:#f5a524;
+  --v12-shadow:0 1px 2px rgba(0,0,0,.4),0 12px 30px -18px rgba(0,0,0,.7);
+  color-scheme:dark;
+}
+
+/* ---------- estrutura geral ---------- */
+html body.v12{background:var(--v12-bg)!important}
+body.v12::before{opacity:.35}
+body.v12 .appMain{color:var(--v12-text)}
+body.v12 .premiumModuleHead h1,body.v12 #premiumPageTitle{color:var(--v12-text)!important}
+body.v12 .premiumModuleHead p{color:var(--v12-muted)!important}
+
+/* ---------- Resumão ---------- */
+body.v12 section[data-page] .r2Card{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;border-radius:var(--v12-radius)!important;box-shadow:var(--v12-shadow)!important}
+body.v12 section[data-page] .r2Card::before,body.v12 section[data-page] .r2Card::after{display:none!important}
+body.v12 section[data-page] .r2Head h3{font-size:17px!important;font-weight:750!important;color:var(--v12-text)!important;letter-spacing:-.01em}
+body.v12 section[data-page] .r2Head p{color:var(--v12-muted)!important;font-size:14px!important;line-height:1.5!important}
+
+/* faixa de abertura da aba: discreta, sem repetir o título da página */
+body.v12 section[data-page] .r2Hero{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;box-shadow:var(--v12-shadow)!important;padding:16px 20px!important;border-radius:var(--v12-radius)!important}
+body.v12 section[data-page] .r2Hero::before,body.v12 section[data-page] .r2Hero::after{display:none!important}
+body.v12 section[data-page] .r2Hero h2{color:var(--v12-text)!important;font-size:20px!important;margin:4px 0 4px!important}
+body.v12 section[data-page] .r2Hero p{color:var(--v12-muted)!important;font-size:14.3px!important}
+body.v12 section[data-page] .r2Hero .r2Eyebrow{color:var(--v12-F)!important}
+body.v12 section[data-page] .r2Hero .r2Badge{background:var(--v12-surface2)!important;color:var(--v12-muted)!important;border:1px solid var(--v12-line)!important}
+
+/* veredito: azul-marinho sóbrio, cor do partido só como destaque */
+body.v12 .sumVerdict,body.v12 .sumVerdict.blue,body.v12 .sumVerdict.red{background:radial-gradient(900px 260px at 50% -40%,rgba(80,120,255,.22),transparent 70%),linear-gradient(180deg,var(--v12-navy2),var(--v12-navy))!important;border:1px solid rgba(255,255,255,.08)!important;box-shadow:0 18px 40px -22px rgba(11,23,54,.65)!important;border-radius:22px!important;padding:22px 24px!important}
+body.v12 .sumVerdict::before{opacity:.18!important}
+body.v12 .sumPhase{color:#9fb3df!important;opacity:1!important;letter-spacing:.14em!important}
+body.v12 .sumWho span{color:#c9d5f0!important;opacity:1!important}
+body.v12 .sumWho strong{font-size:44px!important;letter-spacing:-.03em!important}
+body.v12 .sumWho em{background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.16)!important;font-weight:800!important}
+body.v12 .sumCand{background:var(--v12-surface)!important;color:var(--v12-text)!important;border:1px solid var(--v12-line)!important;box-shadow:0 10px 30px -18px rgba(0,0,0,.55)!important;border-radius:18px!important;outline:none!important}
+body.v12 .sumCand.blue{box-shadow:inset 0 4px 0 var(--v12-F),0 10px 30px -18px rgba(0,0,0,.55)!important}
+body.v12 .sumCand.red{box-shadow:inset 0 4px 0 var(--v12-L),0 10px 30px -18px rgba(0,0,0,.55)!important}
+body.v12 .sumCand.lead{border-color:var(--v12-line)!important}
+body.v12 .sumCand.blue .sumCandPct{color:var(--v12-F)!important}body.v12 .sumCand.red .sumCandPct{color:var(--v12-L)!important}
+body.v12 .sumCandPct{font-size:46px!important;letter-spacing:-.03em!important}
+body.v12 .sumCandName{color:var(--v12-text)!important}
+body.v12 .sumCandTxt small,body.v12 .sumCandVote span,body.v12 .sumCandVotes span,body.v12 .sumCandVotes small{color:var(--v12-muted)!important}
+body.v12 .sumCandVotes strong,body.v12 .sumCandVote b{color:var(--v12-text)!important}
+body.v12 .sumCandParty{border-radius:6px!important}
+body.v12 .sumMini{background:var(--v12-line2)!important}
+body.v12 .sumCrown{background:transparent!important;color:var(--v12-amber)!important;border:1px solid currentColor!important;box-shadow:none!important;top:12px!important;right:14px!important;font-size:12.3px!important;padding:3px 9px!important;background-color:var(--v12-surface)!important}
+body.v12 .sumVs{background:rgba(255,255,255,.1)!important;border:1px solid rgba(255,255,255,.2)!important;box-shadow:none!important;color:#dbe4ff!important;padding:0!important;font-size:14px!important;letter-spacing:.06em}
+body.v12 .sumDiff{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important;border-radius:18px!important}
+body.v12 .sumDiffVotes{background:rgba(255,255,255,.06)!important;border:1px solid rgba(255,255,255,.12)!important}
+body.v12 .sumDiffVotes strong{text-shadow:none!important}
+body.v12 .sumDiffPP{box-shadow:none!important;border-radius:14px!important}
+
+/* frase-resumo, termômetro de abertura */
+body.v12 .sumOneCard{border-left:4px solid var(--v12-F)!important}
+body.v12 .sumOne{color:var(--v12-text)!important;font-size:15.7px!important;line-height:1.6!important}
+body.v12 .sumOpenLine{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;color:var(--v12-text)!important;box-shadow:var(--v12-shadow)!important;border-radius:14px!important}
+
+/* distribuição das simulações: barras sólidas */
+body.v12 .sdKpis>*{background:var(--v12-surface2)!important;border:1px solid var(--v12-line)!important;border-radius:14px!important}
+body.v12 .sdKpis *{color:var(--v12-text)}
+body.v12 .sdKpis small,body.v12 .sdKpis span{color:var(--v12-muted)!important}
+body.v12 .sdRow{color:var(--v12-text)!important}
+body.v12 .sdTrack{background:var(--v12-line2)!important;border-radius:999px!important;height:10px!important}
+body.v12 .sdTrack i,body.v12 .sdTrack span,body.v12 .sdTrack b{border-radius:999px!important;box-shadow:none!important}
+body.v12 .sdRow.blue .sdTrack *{background:var(--v12-F)!important}body.v12 .sdRow.red .sdTrack *{background:var(--v12-L)!important}
+body.v12 .sdNote{color:var(--v12-muted)!important}
+
+/* termômetros por fonte e "por que" */
+body.v12 .sumTh{color:var(--v12-text)!important;border-color:var(--v12-line2)!important}
+body.v12 .sumTh small,body.v12 .sumTh span small{color:var(--v12-muted)!important}
+body.v12 .mkBar{border-radius:999px!important}
+body.v12 #sumWho li,body.v12 #sumWhy li,body.v12 #sumWhy .rd-i,body.v12 #sumWhy>div{background:var(--v12-surface2)!important;border:1px solid var(--v12-line)!important;color:var(--v12-text)!important;border-radius:14px!important}
+
+/* cenários "e se" */
+body.v12 .sumIfCard{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;border-top:1px solid var(--v12-line)!important;border-radius:16px!important;box-shadow:none!important;position:relative}
+body.v12 .sumIfCard::before{content:"";position:absolute;left:14px;top:-1px;width:36px;height:3px;border-radius:0 0 3px 3px;background:var(--v12-F)}
+body.v12 .sumIfCard.flip{border-color:var(--v12-amber)!important;box-shadow:0 0 0 1px var(--v12-amber) inset!important}
+body.v12 .sumIfCard.flip::before{background:var(--v12-amber)}
+body.v12 .sumIfT{color:var(--v12-text)!important}
+body.v12 .sumIfS,body.v12 .sumIfR{color:var(--v12-muted)!important}
+body.v12 .sumIfV{color:var(--v12-text)!important}
+body.v12 .sumIfCard .up{color:var(--v12-F)!important}body.v12 .sumIfCard .down{color:var(--v12-L)!important}
+
+/* simulador e tabela */
+body.v12 .sumSl{color:var(--v12-text)!important}
+body.v12 .sumSl small{color:var(--v12-muted)!important}
+body.v12 .sumSl input[type=range]{accent-color:var(--v12-F)}
+body.v12 section[data-page] .r2Preset{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;color:var(--v12-text)!important}
+body.v12 #sumCustomRes>div:first-child{background:linear-gradient(180deg,var(--v12-navy2),var(--v12-navy))!important;border-radius:16px!important}
+body.v12 section[data-page] .tableWrap{background:var(--v12-surface)!important;border:1px solid var(--v12-line)!important;box-shadow:none!important}
+body.v12 section[data-page] .r2Table th{background:var(--v12-surface2)!important;color:var(--v12-muted)!important;border-color:var(--v12-line)!important}
+body.v12 section[data-page] .r2Table td{color:var(--v12-text)!important;border-color:var(--v12-line2)!important}
+
+/* ---------- modo escuro: estrutura comum ---------- */
+html[data-theme="dark"] body.v12 .premiumModuleHead,html[data-theme="dark"] body.v12 .v7GlobalStatus,html[data-theme="dark"] body.v12 .electionCountdown{background:var(--v12-surface)!important;border-color:var(--v12-line)!important;color:var(--v12-text)!important;box-shadow:var(--v12-shadow)!important}
+html[data-theme="dark"] body.v12 .premiumModuleHead{background:transparent!important;box-shadow:none!important}
+html[data-theme="dark"] body.v12 .v7GlobalStatus *,html[data-theme="dark"] body.v12 .electionCountdown *{color:inherit}
+html[data-theme="dark"] body.v12 .v7GlobalStatus [class*="chip"],html[data-theme="dark"] body.v12 .v7GlobalStatus span[class]{background-color:transparent}
+html[data-theme="dark"] body.v12 .electionCountdown [class*="Unit"],html[data-theme="dark"] body.v12 .electionCountdown [class*="unit"],html[data-theme="dark"] body.v12 .electionCountdown [class*="box"],html[data-theme="dark"] body.v12 .electionCountdown [class*="Box"]{background:var(--v12-surface2)!important;border-color:var(--v12-line)!important}
+html[data-theme="dark"] body.v12 .electionCountdown small,html[data-theme="dark"] body.v12 .electionCountdown span{color:var(--v12-muted)}
+html[data-theme="dark"] body.v12 .premiumModuleHead [class*="Eyebrow"],html[data-theme="dark"] body.v12 .premiumModuleHead small{color:var(--v12-faint)!important}
+html[data-theme="dark"] body.v12 .r2Card,html[data-theme="dark"] body.v12 .card{background:var(--v12-surface)!important;border-color:var(--v12-line)!important;color:var(--v12-text)!important}
+html[data-theme="dark"] body.v12 .mobileTopbar{background:rgba(7,12,24,.92)!important}
+html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r2Table th{color:var(--v12-text)}
+
+/* botão de tema */
+#themeBtn{display:flex;align-items:center;justify-content:center;gap:8px;width:calc(100% - 20px);margin:6px 10px 0;min-height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);color:#e5edf8;font:800 13px/1.2 Manrope,system-ui,sans-serif;cursor:pointer}
+#themeBtn:hover{background:rgba(34,211,238,.14);border-color:rgba(34,211,238,.35)}
+/* modo escuro · textos que tinham cor fixa escura no Resumão */
+html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sdRow span,html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sdRow b,
+html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sumTh b,html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .rdBody b,
+html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sumIfR strong,html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sumIfV b,
+html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sumSl b,html[data-theme="dark"] body.v12 section[data-page="r2-sum"] .sumAgree,
+html[data-theme="dark"] body.v12 section[data-page="r2-sum"] td,html[data-theme="dark"] body.v12 section[data-page="r2-sum"] #sumThermo b{color:var(--v12-text)!important}
+html[data-theme="dark"] body.v12 .sumOpenLine a{color:var(--v12-F)!important}
+html[data-theme="dark"] body.v12 .sumDiffPP{background:#f4f7ff!important}
+html[data-theme="dark"] body.v12 .r2Table,html[data-theme="dark"] body.v12 .r2Table tr,html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .tableWrap{background-color:transparent!important}
+html[data-theme="dark"] body.v12 .r2Table th{background:var(--v12-surface2)!important;color:var(--v12-muted)!important}
+html[data-theme="dark"] body.v12 .r2Table td,html[data-theme="dark"] body.v12 .r2Table th{border-color:var(--v12-line)!important}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1045,7 +1177,7 @@ img,svg,canvas,video{max-width:100%}
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V11.48 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V12.0 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1055,10 +1187,10 @@ img,svg,canvas,video{max-width:100%}
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V11.48 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V12.0 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V11.48 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V12.0 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1168,7 +1300,7 @@ img,svg,canvas,video{max-width:100%}
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V11.48 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V12.0 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -2095,7 +2227,7 @@ img,svg,canvas,video{max-width:100%}
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V11.48 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V12.0 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2151,7 +2283,7 @@ img,svg,canvas,video{max-width:100%}
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V11.48 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V12.0 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2168,7 +2300,7 @@ img,svg,canvas,video{max-width:100%}
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V11.48 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V12.0 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -2769,7 +2901,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V11.48 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V12.0 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3452,7 +3584,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V11.48 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V11.48 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V11.48 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V12.0 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V12.0 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V12.0 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3534,7 +3666,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V11.48 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V12.0 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -5940,6 +6072,55 @@ function renderPollBoard(){const el=$('pbBody');if(!el)return;
   async function check(){if(shown||document.hidden)return;try{const r=await fetch(location.pathname+'?v='+Date.now(),{cache:'no-store'});if(!r.ok)return;const t=await r.text();const m=t.match(/V\d+\.\d+(?= · 2º TURNO)/);if(m&&m[0]!==mine)show(m[0])}catch(e){}}
   function show(v){shown=true;const d=document.createElement('div');d.id='newVer';d.innerHTML=`<span>🔄 Nova versão disponível (${v}) com dados atualizados</span><button type="button">Atualizar agora</button>`;d.querySelector('button').onclick=()=>location.reload();document.body.appendChild(d)}
   setInterval(check,10*60e3);setTimeout(check,90e3);document.addEventListener('visibilitychange',()=>{if(!document.hidden)setTimeout(check,2e3)});
+})();
+/* V12 · refinamento visual + modo escuro (automático pelo aparelho, com botão para trocar) */
+(function(){
+  const KEY='ag2026_theme',root=document.documentElement,mq=window.matchMedia?window.matchMedia('(prefers-color-scheme: dark)'):null;
+  const pref=()=>{try{return localStorage.getItem(KEY)||'auto'}catch(e){return'auto'}};
+  const isDark=()=>{const p=pref();return p==='dark'||(p==='auto'&&!!(mq&&mq.matches))};
+  function apply(){root.setAttribute('data-theme',isDark()?'dark':'light');const b=document.getElementById('themeBtn');if(b)b.innerHTML=isDark()?'<span aria-hidden="true">☀️</span> Modo claro':'<span aria-hidden="true">🌙</span> Modo escuro';
+    const tc=document.querySelector('meta[name="theme-color"]');if(tc)tc.setAttribute('content',isDark()?'#070c18':'#071033');try{window.dispatchEvent(new Event('resize'))}catch(e){}}
+  function init(){document.body.classList.add('v12');const foot=document.querySelector('#sidebar .sidebarFoot')||document.querySelector('#sidebar');
+    if(foot&&!document.getElementById('themeBtn')){const b=document.createElement('button');b.type='button';b.id='themeBtn';const pin=document.getElementById('sidePin');if(pin&&pin.parentNode===foot)pin.after(b);else foot.insertBefore(b,foot.firstChild);
+      b.addEventListener('click',()=>{try{localStorage.setItem(KEY,isDark()?'light':'dark')}catch(e){}apply()})}
+    apply();if(mq&&mq.addEventListener)mq.addEventListener('change',()=>{if(pref()==='auto')apply()})}
+  root.setAttribute('data-theme',isDark()?'dark':'light');
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
+})();
+/* V12 · adaptador do modo escuro: converte, na aba aberta, fundos claros, textos escuros e cores dos gráficos */
+(function(){
+  const root=document.documentElement,isDark=()=>root.getAttribute('data-theme')==='dark';
+  const SURF=[15,23,41],SURF2=[19,29,51],LINE=[31,42,68],TEXT=[231,236,246],MUTED=[154,168,194];
+  const parse=c=>{const m=(c||'').match(/[\d.]+/g);if(!m||m.length<3)return null;return{r:+m[0],g:+m[1],b:+m[2],a:m.length>3?+m[3]:1}};
+  const lum=o=>(0.2126*o.r+0.7152*o.g+0.0722*o.b)/255;
+  const sat=o=>{const mx=Math.max(o.r,o.g,o.b),mn=Math.min(o.r,o.g,o.b);return mx?(mx-mn)/mx:0};
+  const css=a=>`rgb(${a.map(x=>Math.round(x)).join(',')})`;
+  const mix=(o,base,t)=>[base[0]*(1-t)+o.r*t,base[1]*(1-t)+o.g*t,base[2]*(1-t)+o.b*t];
+  const lighten=o=>{const t=.42;return[o.r+(255-o.r)*t,o.g+(255-o.g)*t,o.b+(255-o.b)*t]};
+  const SKIP='.sumVerdict,.sidebar,#sidebar,.mobileTopbar,#newVer,.sumDiffPP';
+  function mapBg(o){if(sat(o)>.12)return css(mix(o,SURF2,.22));return css(lum(o)>.93?SURF:SURF2)}
+  function mapText(o){if(sat(o)>.35&&Math.max(o.r,o.g,o.b)>90)return css(lighten(o));return css(lum(o)<.22?TEXT:MUTED)}
+  function save(e,k,v){const d=e.dataset;const o=d.v12o?JSON.parse(d.v12o):{};if(!(k in o))o[k]=e.style.getPropertyValue(k)||'';d.v12o=JSON.stringify(o);e.style.setProperty(k,v,'important')}
+  function adaptEl(e){if(e.closest(SKIP))return;const s=getComputedStyle(e);
+    if(e instanceof SVGElement){const tg=e.tagName.toLowerCase();
+      if(tg==='text'||tg==='tspan'){const f=parse(s.fill);if(f&&f.a>.3&&lum(f)<.5)save(e,'fill',mapText(f));return}
+      if(tg==='rect'||tg==='circle'||tg==='path'||tg==='polygon'){const f=parse(s.fill);if(f&&f.a>.5&&lum(f)>.85)save(e,'fill',mapBg(f))}
+      if(tg==='line'||tg==='path'||tg==='rect'||tg==='polyline'){const k=parse(s.stroke);if(k&&lum(k)>.82&&sat(k)<.2)save(e,'stroke',css(LINE));else if(k&&lum(k)<.15&&s.stroke!=='none')save(e,'stroke',css(MUTED))}
+      return}
+    const bg=parse(s.backgroundColor);let darkBg=false;
+    if(bg&&bg.a>.4&&lum(bg)>.78){save(e,'background-color',mapBg(bg));darkBg=true}
+    const bi=s.backgroundImage;if(bi&&bi!=='none'&&/gradient/.test(bi)&&!/url\(/.test(bi)){const cs=[...bi.matchAll(/rgba?\([^)]+\)/g)].map(m=>parse(m[0])).filter(Boolean);if(cs.length&&cs.every(c=>c.a<.2||lum(c)>.75)){save(e,'background-image','none');if(!darkBg)save(e,'background-color',mapBg(cs.find(c=>c.a>=.2)||cs[0]))}}
+    const bc=parse(s.borderTopColor);if(bc&&s.borderTopWidth!=='0px'&&lum(bc)>.8&&sat(bc)<.25)save(e,'border-color',css(LINE));
+    const hasTxt=[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());if(hasTxt||/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.tagName)){const c=parse(s.color);if(c&&lum(c)<.5)save(e,'color',mapText(c))}}
+  function restore(scope){(scope||document).querySelectorAll('[data-v12o]').forEach(e=>{const o=JSON.parse(e.dataset.v12o);Object.entries(o).forEach(([k,v])=>{if(v)e.style.setProperty(k,v);else e.style.removeProperty(k)});delete e.dataset.v12o})}
+  let busy=false,t=0;
+  function run(){t=0;if(!isDark())return;busy=true;try{const sec=document.querySelector('section[data-page="'+document.body.dataset.activeTab+'"]');
+      const scopes=[sec,document.querySelector('#premiumModuleHead'),document.querySelector('#v7GlobalStatus'),document.querySelector('#electionCountdown'),document.querySelector('#v7NotifPanel')].filter(Boolean);
+      scopes.forEach(sc=>{adaptEl(sc);sc.querySelectorAll('*').forEach(adaptEl)})}finally{setTimeout(()=>busy=false,0)}}
+  const later=()=>{if(!t)t=setTimeout(run,180)};
+  try{new MutationObserver(ms=>{if(busy||!isDark())return;if(ms.some(m=>m.type==='childList'||(m.type==='attributes'&&m.attributeName!=='style'&&m.attributeName!=='data-v12o')))later()}).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['class','data-active-tab']})}catch(e){}
+  new MutationObserver(()=>{if(isDark())later();else restore()}).observe(root,{attributes:true,attributeFilter:['data-theme']});
+  window.V8_darkAdapt=run;setTimeout(later,600);
 })();
 /* ===================== ORQUESTRAÇÃO ===================== */
 function setStatus(cls,html){const el=$('r2DataStatus');if(!el)return;el.className='r2Status '+cls;$('r2DataStatusText').innerHTML=html}
