@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V11.43 · 2º TURNO · central estatística ===== */
+/* ===== V11.44 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1012,6 +1012,27 @@ img,svg,canvas,video{max-width:100%}
 .r2pNowTop{font-weight:800!important;white-space:nowrap}
 .r2pNowTop.busy{opacity:.75}
 @media (max-width:760px){.r2pTopActs{align-items:flex-start}}
+/* V11.44 · Placar das pesquisas */
+.pbTop{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:4px 0 14px}
+.pbBig{border-radius:16px;padding:14px 16px;border:1px solid #e2e8f0;background:#f8fafc;min-width:0}
+.pbBig span{display:block;font-size:.74rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.04em}
+.pbBig b{display:block;font:900 2.3rem/1.05 'Sora','Inter',sans-serif;margin:6px 0 2px}
+.pbBig small{color:#64748b;font-size:.8rem;font-weight:600}
+.pbBig.f{background:linear-gradient(135deg,#eff6ff,#dbeafe);border-color:#bfdbfe}.pbBig.f b{color:#1d4ed8}
+.pbBig.l{background:linear-gradient(135deg,#fef2f2,#fee2e2);border-color:#fecaca}.pbBig.l b{color:#b91c1c}
+.pbBig.e b{color:#475569}.pbBig.t b{color:#0f172a}
+.pbBars{display:grid;gap:8px;margin-bottom:14px}
+.pbBarRow{display:grid;grid-template-columns:210px 1fr;gap:12px;align-items:center}
+.pbBarLab{font-weight:800;font-size:.86rem;color:#0f172a}.pbBarLab small{display:block;font-weight:600;color:#64748b;font-size:.76rem}
+.pbBar{display:flex;height:30px;border-radius:10px;overflow:hidden;background:#eef2f7}
+.pbBar span{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:.85rem;min-width:24px}
+.pbBar .f{background:#2563eb}.pbBar .l{background:#dc2626}.pbBar .e{background:#94a3b8}
+.pbGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.pbGrid>div{border:1px solid #e2e8f0;border-radius:14px;padding:11px 13px;background:#fff;min-width:0}
+.pbGrid span{display:block;font-size:.72rem;font-weight:800;color:#64748b;text-transform:uppercase;letter-spacing:.04em}
+.pbGrid b{display:block;font-size:1.02rem;color:#0f172a;margin:4px 0 2px}.pbGrid small{color:#64748b;font-size:.78rem;line-height:1.35;display:block}
+@media (max-width:900px){.pbTop{grid-template-columns:repeat(2,minmax(0,1fr))}.pbGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.pbGrid{grid-template-columns:1fr}.pbBarRow{grid-template-columns:1fr;gap:4px}.pbBig b{font-size:1.9rem}}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1020,7 +1041,7 @@ img,svg,canvas,video{max-width:100%}
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V11.43 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V11.44 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1030,10 +1051,10 @@ img,svg,canvas,video{max-width:100%}
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V11.43 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V11.44 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V11.43 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V11.44 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1143,7 +1164,7 @@ img,svg,canvas,video{max-width:100%}
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V11.43 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V11.44 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -1774,6 +1795,10 @@ img,svg,canvas,video{max-width:100%}
     <div><div class="r2Eyebrow">2º TURNO · PESQUISAS ELEITORAIS</div><h2>Pesquisas do 2º turno: média, conferência e precisão</h2><p>Todas as pesquisas nacionais Flávio × Lula divulgadas após o 1º turno, conferidas pelo registro no TSE, reunidas em uma média ponderada. Mais abaixo: quanto cada instituto errou no 1º turno e quanto cada premissa do modelo mexe na probabilidade.</p></div>
     <span class="r2Badge ok"><i></i><span>Conferidas no TSE</span></span>
   </div>
+  <div class="r2Card pbCard" id="pbCard">
+    <div class="r2Head"><div><h3>Placar das pesquisas</h3><p>Quantas pesquisas nacionais de 2º turno já saíram e quem aparece à frente em cada uma, pelos votos válidos divulgados pelo instituto. Diferenças menores que 0,5 ponto contam como empate.</p></div><span class="tag" id="pbTag">—</span></div>
+    <div id="pbBody"></div>
+  </div>
   <div class="r2Card">
     <div class="r2Head"><div><h3>Agregador das pesquisas · 2º turno</h3><p>Todas as pesquisas juntas em uma média só: cada levantamento pesa mais quanto mais recente e maior a amostra, e o mesmo instituto não conta em dobro. A faixa sombreada é o intervalo de 90% da média; a tira abaixo mostra quem liderou a média a cada dia.</p></div>
       <div class="r2AggCtl"><label class="r2Switch"><input type="checkbox" id="r2AggAdj"><span>Corrigir pelo viés de cada instituto no 1º turno</span></label></div></div>
@@ -2066,7 +2091,7 @@ img,svg,canvas,video{max-width:100%}
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V11.43 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V11.44 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2122,7 +2147,7 @@ img,svg,canvas,video{max-width:100%}
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V11.43 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V11.44 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2139,7 +2164,7 @@ img,svg,canvas,video{max-width:100%}
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V11.43 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V11.44 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -2740,7 +2765,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V11.43 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V11.44 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3423,7 +3448,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V11.43 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V11.43 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V11.43 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V11.44 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V11.44 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V11.44 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3505,7 +3530,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V11.43 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V11.44 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -5865,6 +5890,39 @@ document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest
   window.addEventListener('resize',later);document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('.sideTab,[data-target]'))setTimeout(scan,450)},true);
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>setTimeout(scan,800));else setTimeout(scan,800);
 })();
+/* V11.44 · Placar das pesquisas (aba Pesquisas eleitorais) */
+function renderPollBoard(){const el=$('pbBody');if(!el)return;
+  const r1=v=>Math.round(10*v)/10,ok=x=>Number.isFinite(+x.a)&&Number.isFinite(+x.b)&&x.end>='2026-10-05';
+  const L=(S.r2polls||[]).filter(ok).map(x=>{const lv=r2Lv(x),F=r1(100-lv),Lu=r1(lv),g=r1(F-Lu),moe=+x.moe||NaN,key=(instTokens(x.inst)[0]||x.inst),d=x.pub||x.end;
+    return{x,F,L:Lu,g,w:Math.abs(g)<.5?'E':g>0?'F':'L',moe,inMoe:Number.isFinite(moe)?Math.abs(g)<=2*moe:null,key,d,ver:r2IsVerified(x),n:+x.sample||0}});
+  const tag=$('pbTag');if(!L.length){el.innerHTML='<p class="pbEmpty">Aguardando as primeiras pesquisas do 2º turno.</p>';if(tag)tag.textContent='—';return}
+  const cnt=a=>({F:a.filter(p=>p.w==='F').length,L:a.filter(p=>p.w==='L').length,E:a.filter(p=>p.w==='E').length,N:a.length});
+  const all=cnt(L),pc=(k,c)=>c.N?Math.round(100*c[k]/c.N):0;
+  /* última pesquisa de cada instituto */
+  const last={};L.forEach(p=>{if(!last[p.key]||p.d>last[p.key].d||(p.d===last[p.key].d&&p.x.end>last[p.key].x.end))last[p.key]=p});const LI=Object.values(last),li=cnt(LI);
+  /* últimos 7 dias */
+  const maxD=L.map(p=>p.d).sort().pop(),lim=new Date(Date.parse(maxD+'T12:00:00')-6*864e5).toISOString().slice(0,10),W=L.filter(p=>p.d>=lim),wk=cnt(W);
+  const avg=a=>a.length?r1(a.reduce((s,p)=>s+p.F,0)/a.length):NaN,mF=avg(L),mL=r1(100-mF),mFw=avg(W);
+  const best=w=>L.filter(p=>p.w===w).sort((a,b)=>Math.abs(b.g)-Math.abs(a.g))[0];const bF=best('F'),bL=best('L');
+  const inM=L.filter(p=>p.inMoe===true).length,outF=L.filter(p=>p.inMoe===false&&p.w==='F').length,outL=L.filter(p=>p.inMoe===false&&p.w==='L').length;
+  const nInt=L.reduce((s,p)=>s+p.n,0),nInst=Object.keys(last).length,nVer=L.filter(p=>p.ver).length;
+  if(tag)tag.textContent=L.length+' pesquisas · '+nInst+' institutos';
+  const dm=d=>d.split('-').reverse().slice(0,2).join('/');
+  const bar=(c,lab)=>{const f=c.N?100*c.F/c.N:0,e=c.N?100*c.E/c.N:0,l=c.N?100*c.L/c.N:0;return`<div class="pbBarRow"><div class="pbBarLab">${lab}<small>${c.N} pesquisa${c.N===1?'':'s'}</small></div><div class="pbBar">${c.F?`<span class="f" style="width:${f}%">${c.F}</span>`:''}${c.E?`<span class="e" style="width:${e}%">${c.E}</span>`:''}${c.L?`<span class="l" style="width:${l}%">${c.L}</span>`:''}</div></div>`};
+  el.innerHTML=`<div class="pbTop">
+    <div class="pbBig f"><span>Flávio à frente</span><b>${all.F}</b><small>${pc('F',all)}% das pesquisas</small></div>
+    <div class="pbBig l"><span>Lula à frente</span><b>${all.L}</b><small>${pc('L',all)}% das pesquisas</small></div>
+    <div class="pbBig e"><span>Empate (dif. &lt; 0,5)</span><b>${all.E}</b><small>${pc('E',all)}% das pesquisas</small></div>
+    <div class="pbBig t"><span>Total de pesquisas</span><b>${all.N}</b><small>${nVer} conferidas no TSE · ${nInst} institutos</small></div></div>
+  <div class="pbBars">${bar(all,'Todas desde o 1º turno')}${bar(wk,'Últimos 7 dias ('+dm(lim)+' a '+dm(maxD)+')')}${bar(li,'Última de cada instituto')}</div>
+  <div class="pbGrid">
+    <div><span>Média simples dos válidos</span><b>Flávio ${nf(mF,1)}% × Lula ${nf(mL,1)}%</b><small>todas as ${all.N} pesquisas com o mesmo peso${Number.isFinite(mFw)?' · últimos 7 dias: Flávio '+nf(mFw,1)+'% × Lula '+nf(r1(100-mFw),1)+'%':''}</small></div>
+    <div><span>Dentro da margem de erro</span><b>${inM} de ${L.filter(p=>p.inMoe!==null).length}</b><small>diferença até 2× a margem declarada · fora dela: Flávio ${outF}, Lula ${outL}</small></div>
+    <div><span>Maior vantagem de Flávio</span><b>${bF?'+'+nf(bF.g,1)+' p.p.':'—'}</b><small>${bF?E(cleanInst(bF.x.inst))+' · '+dm(bF.d)+' ('+nf(bF.F,1)+'% × '+nf(bF.L,1)+'%)':'nenhuma pesquisa com Flávio à frente'}</small></div>
+    <div><span>Maior vantagem de Lula</span><b>${bL?'+'+nf(Math.abs(bL.g),1)+' p.p.':'—'}</b><small>${bL?E(cleanInst(bL.x.inst))+' · '+dm(bL.d)+' ('+nf(bL.L,1)+'% × '+nf(bL.F,1)+'%)':'nenhuma pesquisa com Lula à frente'}</small></div>
+    <div><span>Eleitores entrevistados</span><b>${nInt.toLocaleString('pt-BR')}</b><small>soma das amostras informadas</small></div>
+    <div><span>Última de cada instituto</span><b>Flávio ${li.F} · Lula ${li.L}${li.E?' · empate '+li.E:''}</b><small>${nInst} institutos, contando só a rodada mais recente de cada um</small></div>
+  </div>`}
 /* ===================== ORQUESTRAÇÃO ===================== */
 function setStatus(cls,html){const el=$('r2DataStatus');if(!el)return;el.className='r2Status '+cls;$('r2DataStatusText').innerHTML=html}
 function describeBase(){const b=S.base;if(!b)return;
@@ -5878,8 +5936,8 @@ function run(){
   S.res=res;try{runLab()}catch(e){console.warn('lab',e)}
   computeLive();renderAll();
 }
-const PAGE_RENDER={'r2-live':['renderLiveTab','renderPendulums'],'r2-goal':['renderGoal'],'r2-ne':['renderNE'],'live-regions':['renderR1Map'],'r2-hub':['renderHub','renderParams','renderLive'],'r2-regions':['renderRegions'],'r2-path':['renderPath','renderOpen'],'r2-capitals':['renderCapitals'],'r2-lab':['renderLab'],'r2-mkt':['renderMkt'],'r2-neh':['renderNEH'],'r2-apoios':['renderApoios'],'r2-sum':['renderSum','renderOpenSum']};
-const FN={renderParams,renderHub,renderRegions,renderPath,renderCapitals,renderLab,renderLive,renderLiveTab,renderR1Map,renderPendulums,renderGoal,renderNE,renderMkt,renderNEH,renderSum,renderApoios,renderOpen,renderOpenSum};
+const PAGE_RENDER={'r2-live':['renderLiveTab','renderPendulums'],'r2-goal':['renderGoal'],'r2-ne':['renderNE'],'live-regions':['renderR1Map'],'r2-hub':['renderHub','renderParams','renderLive'],'r2-regions':['renderRegions'],'r2-path':['renderPath','renderOpen'],'r2-capitals':['renderCapitals'],'r2-lab':['renderPollBoard','renderLab'],'r2-mkt':['renderMkt'],'r2-neh':['renderNEH'],'r2-apoios':['renderApoios'],'r2-sum':['renderSum','renderOpenSum']};
+const FN={renderParams,renderHub,renderRegions,renderPath,renderCapitals,renderLab,renderLive,renderLiveTab,renderR1Map,renderPendulums,renderGoal,renderNE,renderMkt,renderNEH,renderSum,renderApoios,renderOpen,renderOpenSum,renderPollBoard};
 function renderAll(){describeBase();Object.values(FN).forEach(f=>{try{f()}catch(e){console.warn('V8 render',f.name,e)}});try{renderReading(document.body.dataset.activeTab)}catch(e){}}
 function renderPage(k){(PAGE_RENDER[k]||[]).forEach(n=>{try{FN[n]()}catch(e){console.warn('V8',n,e)}});try{renderReading(k)}catch(e){}}
 async function loadR1(force){
