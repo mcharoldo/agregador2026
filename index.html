@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V13.8 · 2º TURNO · central estatística ===== */
+/* ===== V13.9 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1253,6 +1253,16 @@ body.v12 .lvTop #r2xGauge{display:block;width:100%;max-width:440px;height:auto;m
 @media(max-width:900px){body.v12 .r2Grid3.lvTop{grid-template-columns:1fr}}
 body.v12 #r2xSrc{margin-top:14px}
 body.v12 .lvTop .r2GaugeVal{display:none}
+/* V13.9 · degradê de confirmação da vitória (Projeção ao vivo) */
+body.v12 .r2Call.wF,body.v12 .r2Kpi.lvNeed.blue{--cc:37,99,235}
+body.v12 .r2Call.wL,body.v12 .r2Kpi.lvNeed.red{--cc:220,38,38}
+body.v12 .r2Call.wF,body.v12 .r2Call.wL{background:linear-gradient(100deg,rgba(var(--cc),calc(.06 + .34*var(--ct,0))) 0%,rgba(var(--cc),calc(.03 + .16*var(--ct,0))) 55%,rgba(var(--cc),calc(.01 + .05*var(--ct,0))) 100%),var(--v12-surface)!important;border-color:rgba(var(--cc),calc(.25 + .55*var(--ct,0)))!important;transition:background .8s ease,border-color .8s ease}
+body.v12 .r2Call.def.wF,body.v12 .r2Call.def.wL{background:linear-gradient(110deg,rgb(var(--cc)) 0%,rgba(var(--cc),.82) 100%)!important;border-color:rgb(var(--cc))!important}
+body.v12 .r2Call.def .r2CallLvl,body.v12 .r2Call.def .r2CallWho,body.v12 .r2Call.def .r2CallWho span,body.v12 .r2Call.def .r2CallTxt,body.v12 .r2Call.def .r2CallTxt *{color:#fff!important}
+body.v12 .r2Call.def:before{background:rgba(255,255,255,.55)!important}
+body.v12 .r2Kpi.lvNeed{background:linear-gradient(135deg,rgba(var(--cc),calc(.03 + .26*var(--ct,0))) 0%,rgba(var(--cc),calc(.01 + .08*var(--ct,0))) 100%),var(--v12-surface)!important;transition:background .8s ease}
+body.v12 .r2Kpi.lvNeed.won{background:linear-gradient(135deg,rgb(var(--cc)),rgba(var(--cc),.8))!important;border-color:rgb(var(--cc))!important}
+body.v12 .r2Kpi.lvNeed.won span,body.v12 .r2Kpi.lvNeed.won strong,body.v12 .r2Kpi.lvNeed.won small{color:#fff!important}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1261,7 +1271,7 @@ body.v12 .lvTop .r2GaugeVal{display:none}
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V13.8 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V13.9 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1271,10 +1281,10 @@ body.v12 .lvTop .r2GaugeVal{display:none}
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V13.8 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V13.9 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V13.8 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V13.9 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1384,7 +1394,7 @@ body.v12 .lvTop .r2GaugeVal{display:none}
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V13.8 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V13.9 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -2313,7 +2323,7 @@ body.v12 .lvTop .r2GaugeVal{display:none}
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V13.8 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V13.9 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2369,7 +2379,7 @@ body.v12 .lvTop .r2GaugeVal{display:none}
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V13.8 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V13.9 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2386,7 +2396,7 @@ body.v12 .lvTop .r2GaugeVal{display:none}
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V13.8 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V13.9 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -2987,7 +2997,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V13.8 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V13.9 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3670,7 +3680,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V13.8 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V13.8 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V13.8 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V13.9 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V13.9 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V13.9 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3752,7 +3762,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V13.8 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V13.9 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -4605,7 +4615,7 @@ function trendTxt(a,b){/* variação de Flávio (p.p.) */if(!Number.isFinite(a)|
 function renderLiveTab(){
   if(!$('r2xCall'))return;const L=S.liveRes,r=S.res,b=S.base;const st=callStatus(L);
   /* banner */
-  const call=$('r2xCall');call.className='r2Call '+st.cls+(st.who?(' w'+st.who):'');
+  const call=$('r2xCall');call.className='r2Call '+st.cls+(st.who?(' w'+st.who):'');call.style.setProperty('--ct',(L&&st.who?(st.cls==='def'?1:clamp((Math.max(L.PF,1-L.PF)-.5)/.5,0,1)):0).toFixed(3));
   if(!L){$('r2xCallLvl').textContent=S.demo?'Simulação':'Aguardando a apuração de 25/10';$('r2xCallWho').textContent='Probabilidade pré-eleitoral: Flávio '+capP(r?r.PF:NaN)+' · Lula '+capP(r?r.PL:NaN);$('r2xCallTxt').textContent='A partir das 17h (Brasília) de 25/10, o painel lê o TSE a cada 60 segundos e recalcula a projeção. Use “Simular uma apuração” para ver como a projeção se comporta.';}
   else{$('r2xCallLvl').textContent=st.lvl+(S.demo?' · SIMULAÇÃO':'');$('r2xCallWho').innerHTML=`${st.who==='F'?'<span class="pollBlue">':'<span class="pollRed">'}${NAME[st.who]}</span> · ${capP(st.who==='F'?L.PF:L.PL)} de probabilidade`;
     $('r2xCallTxt').innerHTML=`${st.txt} Projeção final: <b class="pollBlue">Flávio ${P(100-L.med,2)}</b> × <b class="pollRed">Lula ${P(L.med,2)}</b> (IC 95%: Lula ${nf(L.q.p025,1)}–${nf(L.q.p975,1)}%). Seções apuradas: <b>${P(L.prog,2)}</b>. <small style="color:#64748b">${INT(L.N)} simulações nesta leitura · precisão do cálculo ±${nf(196*L.mcSE,2)} p.p.${L.refined?' (rodada extra: resultado ainda incerto)':''}</small>`}
@@ -4613,6 +4623,8 @@ function renderLiveTab(){
   const k=(id,v)=>{const e=$(id);if(e)e.textContent=v};
   if(L){k('r2xK1',P(L.prog,2));k('r2xK2',P(100*L.cF/(L.cL+L.cF),2));k('r2xK2s',INT(L.cF)+' votos');k('r2xK3',P(100*L.cL/(L.cL+L.cF),2));k('r2xK3s',INT(L.cL)+' votos');k('r2xK4',MI(L.R));k('r2xK5',needTxt(100*L.needF));k('r2xK6',needTxt(100*L.needL));k('r2xK7',PP(-100*L.delta,2));}
   else['r2xK1','r2xK2','r2xK3','r2xK4','r2xK5','r2xK6','r2xK7'].forEach(i=>k(i,'—'));
+  {const tint=(id,ct,won)=>{const e=$(id),c=e&&e.closest('.r2Kpi');if(!c)return;c.classList.add('lvNeed');c.style.setProperty('--ct',(+ct||0).toFixed(3));c.classList.toggle('won',!!won)};
+   tint('r2xK5',L?clamp((L.PF-.5)/.5,0,1):0,L&&(L.needF<0||L.mathF));tint('r2xK6',L?clamp((L.PL-.5)/.5,0,1):0,L&&(L.needL<0||L.mathL))}
   /* V11.10: diferença em pontos percentuais (apurado e projeção final) */
   {const el=$('r2xDiff');if(el){if(!L){el.innerHTML='';el.style.display='none'}else{el.style.display='';
     const blk=(tit,f,votes,sub)=>{const d=2*f-100,w=d>=0?'Flávio':'Lula',c=d>=0?'blue':'red';return`<div class="lvDiffBox ${c}"><span>${tit}</span><div class="lvDiffRow"><strong>${w} +${nf(Math.abs(d),2)}<em>p.p.</em></strong><b>≈ ${INT(Math.round(Math.abs(votes)/1e3)*1e3)} votos</b></div><small>${sub}</small></div>`};
@@ -6228,7 +6240,7 @@ function renderPollBoard(){const el=$('pbBody');if(!el)return;
       return}
     const bg=parse(s.backgroundColor);let darkBg=false;
     if(bg&&bg.a>.4&&lum(bg)>.78){save(e,'background-color',mapBg(bg));darkBg=true}
-    const bi=s.backgroundImage;if(bi&&bi!=='none'&&/gradient/.test(bi)&&!/url\(/.test(bi)){const cs=[...bi.matchAll(/rgba?\([^)]+\)/g)].map(m=>parse(m[0])).filter(Boolean);if(cs.length&&cs.every(c=>c.a<.2||lum(c)>.75)){save(e,'background-image','none');if(!darkBg)save(e,'background-color',mapBg(cs.find(c=>c.a>=.2)||cs[0]))}}
+    const bi=s.backgroundImage;if(bi&&bi!=='none'&&/gradient/.test(bi)&&!/url\(/.test(bi)&&!e.matches('.r2Call,.lvNeed')){const cs=[...bi.matchAll(/rgba?\([^)]+\)/g)].map(m=>parse(m[0])).filter(Boolean);if(cs.length&&cs.every(c=>c.a<.2||lum(c)>.75)){save(e,'background-image','none');if(!darkBg)save(e,'background-color',mapBg(cs.find(c=>c.a>=.2)||cs[0]))}}
     const bc=parse(s.borderTopColor);if(bc&&s.borderTopWidth!=='0px'&&lum(bc)>.8&&sat(bc)<.25)save(e,'border-color',css(LINE));
     const hasTxt=[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());if(hasTxt||/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.tagName)){const c=parse(s.color);if(c&&lum(c)<.5)save(e,'color',mapText(c))}}
   function restore(scope){(scope||document).querySelectorAll('[data-v12o]').forEach(e=>{const o=JSON.parse(e.dataset.v12o);Object.entries(o).forEach(([k,v])=>{if(v)e.style.setProperty(k,v);else e.style.removeProperty(k)});delete e.dataset.v12o})}
