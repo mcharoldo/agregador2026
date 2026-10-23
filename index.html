@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V15.8 · 2º TURNO · central estatística ===== */
+/* ===== V15.9 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1281,6 +1281,47 @@ html[data-theme="dark"] body.v12 .pgRank{background:#e7ecf6!important;color:#0b1
 @media (max-width:600px){body.v12 .pgRank{min-width:20px;height:17px;font-size:11.9px;padding:0 4px;margin-right:3px;vertical-align:1px}body.v12 .mkMiniItem.pgRanked>b{font-size:12.9px}}
 body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700;color:var(--v12-muted);margin-top:1px}
 @media (max-width:600px){body.v12 .pgErr{font-size:11.6px}}
+/* ===== V15.9 · Governadores · 2º turno ===== */
+.gvStrip{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:14px 0}
+.gvChip{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;border-radius:14px;background:var(--v12-surface);border:1px solid var(--v12-line);border-left:5px solid var(--c,#94a3b8);box-shadow:var(--v12-shadow);cursor:pointer;text-align:left;font:inherit;color:var(--v12-text);min-width:0}
+.gvChip b{font-size:15.3px;font-weight:900;letter-spacing:.02em}
+.gvChip span{font-size:13.3px;font-weight:800;color:var(--c,#64748b);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.gvChip small{font-size:12.3px;color:var(--v12-muted);font-weight:700;white-space:nowrap}.gvChip small strong{color:var(--c);font-weight:900;font-size:12.9px}
+.gvChip.def{background:color-mix(in srgb,var(--c) 12%,var(--v12-surface))}
+.gvGrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.gvCard{--cc:15,118,110;position:relative;background:var(--v12-surface);border:1px solid var(--v12-line);border-radius:var(--v12-radius);box-shadow:var(--v12-shadow);padding:16px 16px 14px;min-width:0;scroll-margin-top:80px;transition:background .8s ease,border-color .8s ease}
+.gvCard.wA,.gvCard.wB{background:linear-gradient(160deg,rgba(var(--cc),calc(.04 + .26*var(--ct,0))) 0%,rgba(var(--cc),calc(.02 + .1*var(--ct,0))) 60%,rgba(var(--cc),calc(.01 + .04*var(--ct,0))) 100%),var(--v12-surface);border-color:rgba(var(--cc),calc(.2 + .6*var(--ct,0)))}
+.gvCard.def{box-shadow:0 0 0 2px rgba(var(--cc),.55),var(--v12-shadow)}
+.gvHead{display:flex;flex-direction:column;align-items:flex-start;gap:7px;margin-bottom:2px}
+.gvUfBox{display:flex;align-items:center;gap:9px;min-width:0}
+.gvUfBox b{font-size:15.3px;font-weight:900;color:var(--v12-text);line-height:1.2}
+.gvUf{display:inline-grid;place-items:center;min-width:38px;height:28px;padding:0 6px;border-radius:9px;background:var(--v12-navy);color:#fff;font-size:14px;font-weight:900;letter-spacing:.04em}
+.gvSt{display:inline-flex;align-items:center;gap:6px;font-size:12.3px;font-weight:850;padding:5px 9px;border-radius:999px;white-space:nowrap;background:var(--v12-surface2);color:var(--v12-muted);border:1px solid var(--v12-line)}
+.gvSt.run{color:#b91c1c;border-color:rgba(239,68,68,.35);background:rgba(239,68,68,.07)}
+.gvSt.run i{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:v7Pulse 1.2s infinite}
+.gvSt.def{color:#fff;background:rgb(var(--cc));border-color:rgb(var(--cc))}
+.gvGW{max-width:330px;margin:0 auto}
+.gvBar{position:relative;display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--v12-line2);margin:6px 0 10px}
+.gvBar span{display:block;height:100%;transition:width .8s ease}
+.gvBar em{position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:var(--v12-text);opacity:.55}
+.gvCands{display:grid;gap:8px}
+.gvC{display:grid;grid-template-columns:6px 1fr auto;gap:10px;align-items:center;padding:8px 10px;border-radius:12px;background:var(--v12-surface2);border:1px solid var(--v12-line)}
+.gvC i{align-self:stretch;border-radius:4px;background:var(--c)}
+.gvC.win{border-color:var(--c);box-shadow:inset 0 0 0 1px var(--c)}
+.gvN{min-width:0}.gvN b{display:block;font-size:14.3px;font-weight:900;color:var(--v12-text);line-height:1.2}
+.gvN small{display:block;font-size:12.3px;color:var(--v12-muted);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gvTick{font-style:normal;font-size:11.6px;font-weight:900;color:#fff;background:var(--c);padding:1px 6px;border-radius:999px;margin-right:2px}
+.gvV{text-align:right}.gvV strong{display:block;font-size:20px;font-weight:900;letter-spacing:-.03em;color:var(--c);line-height:1.05}
+.gvV small{font-size:12.3px;color:var(--v12-muted);font-weight:700;white-space:nowrap}
+.gvFoot{display:grid;grid-template-columns:1fr 1fr 1.5fr;gap:8px;margin-top:10px;padding-top:10px;border-top:1px dashed var(--v12-line)}
+.gvFoot small{display:block;font-size:11.6px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;color:var(--v12-faint)}
+.gvFoot b{display:block;font-size:13.6px;font-weight:900;color:var(--v12-text);line-height:1.25}
+.gvR1{margin:8px 0 0;font-size:12.6px;color:var(--v12-muted);line-height:1.4}.gvR1 b{color:var(--v12-text)}
+.gvNotes{margin-top:16px}.gvList{margin:4px 0 8px;padding-left:18px;display:grid;gap:7px;font-size:13.6px;line-height:1.5;color:var(--v12-muted)}.gvList b{color:var(--v12-text)}
+.gvEmpty{grid-column:1/-1;text-align:center;color:var(--v12-muted);font-weight:700}
+#r2-gov-section .r2Status{margin-top:12px}
+@media(max-width:1180px){.gvGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.gvStrip{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){.gvGrid{grid-template-columns:1fr}.gvStrip{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gvFoot{grid-template-columns:1fr 1fr}.gvFoot .gvNeed{grid-column:1/-1}}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1289,7 +1330,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V15.8 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V15.9 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1299,10 +1340,10 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V15.8 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V15.9 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V15.8 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V15.9 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1412,7 +1453,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V15.8 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V15.9 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -1830,6 +1871,27 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
     <div class="r2Head"><div><h3>Lista de apoios</h3><p id="apNote"></p></div></div>
     <div id="apFilters"></div>
     <div class="tableWrap"><table class="r2Table apTableT" style="min-width:1100px"><thead><tr><th>Lado</th><th>Apoiador</th><th>Partido</th><th>UF</th><th>Anúncio</th><th>Votos do apoiador (1º turno)</th><th>Estimativa que migra</th><th>Peso do estado (válidos presidente 1T)</th><th>Fonte</th></tr></thead><tbody id="apTable"></tbody></table></div>
+  </div>
+</section>
+<section id="r2-gov-section" class="full" data-page="r2-gov">
+  <div class="r2Hero">
+    <div><div class="r2Eyebrow">2º TURNO · GOVERNADORES</div><h2>Apuração dos governadores em 6 estados</h2><p>Amazonas, Acre, Distrito Federal, Espírito Santo, Rio Grande do Norte e Tocantins escolhem o governador no 2º turno. Os números vêm direto dos arquivos oficiais do TSE e se atualizam sozinhos durante a apuração.</p></div>
+    <span class="r2Badge" id="gvBadge"><i></i><span id="gvBadgeTxt">Começa 25/10 · 17h</span></span>
+  </div>
+  <div class="r2Status" id="gvSrc"><i></i><span id="gvSrcTxt">Conectando ao TSE…</span></div>
+  <div class="gvStrip" id="gvStrip"></div>
+  <div class="gvGrid" id="gvGrid"></div>
+  <div class="r2Card gvNotes">
+    <div class="r2Head"><div><h3>Como ler os cartões</h3></div><button class="r2Preset" id="gvSimBtn" type="button">Simular apuração (teste)</button></div>
+    <ul class="gvList">
+      <li><b>Pêndulo:</b> o ponteiro mostra como os votos válidos já apurados se dividem entre os dois candidatos; o número no centro é o percentual de quem está à frente. A marca tracejada é o resultado dos mesmos dois candidatos no 1º turno, considerando só os votos deles.</li>
+      <li><b>Lados fixos:</b> à esquerda fica quem terminou o 1º turno em primeiro lugar. As cores (verde-petróleo e roxo) só identificam o lado e não têm relação com partido ou com a disputa para presidente.</li>
+      <li><b>Cor de fundo:</b> o cartão ganha a cor de quem lidera à medida que a vitória se confirma, e fica cheio quando o resultado está definido.</li>
+      <li><b>Para virar:</b> parcela dos votos válidos que ainda faltam apurar que o 2º colocado precisaria conquistar. É uma estimativa feita com o eleitorado das seções não apuradas e o comparecimento já observado.</li>
+      <li><b>Definido matematicamente:</b> a diferença já é maior que todo o eleitorado das seções que faltam. <b>Eleito/Eleita · TSE:</b> declaração oficial do TSE no arquivo de resultados.</li>
+      <li><b>Simular apuração:</b> sorteia uma apuração fictícia só na sua tela, para conferir o painel antes de domingo. Os dados do TSE não são alterados.</li>
+    </ul>
+    <div class="r2Note">Fonte: TSE · resultados.tse.jus.br · eleição estadual do 2º turno (6260) e 1º turno de governador (6259). Atualização a cada 60 s a partir das 17h (Brasília) de 25/10.</div>
   </div>
 </section>
 <section id="r2-neh-section" class="full" data-page="r2-neh">
@@ -2341,7 +2403,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V15.8 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V15.9 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2397,7 +2459,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V15.8 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V15.9 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2414,7 +2476,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V15.8 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V15.9 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -3015,7 +3077,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V15.8 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V15.9 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3287,7 +3349,7 @@ calc();renderLive();updateElectionClock();
   if(!nav) return;
   const buttons = {};
   nav.querySelectorAll(".sideTab[data-target]").forEach(btn=>{buttons[btn.dataset.target]=btn;});
-  const r2Keys=['r2-sum','r2-lab','r2-hub','r2-mkt','r2-apoios','r2-live','r2-path','r2-ne','r2-goal','r2-regions','r2-capitals','r2-neh'];
+  const r2Keys=['r2-sum','r2-lab','r2-hub','r2-mkt','r2-apoios','r2-live','r2-gov','r2-path','r2-ne','r2-goal','r2-regions','r2-capitals','r2-neh'];
   const liveKeys=['count','live-regions','live-exterior'];
   const analysisKeys=[];
   const systemKeys=['audit'];
@@ -3363,7 +3425,7 @@ calc();renderLive();updateElectionClock();
     }
 
     const analysis=makeGroup('analysis','Análise',analysisKeys.map(k=>buttons[k]),live,'analysis','');
-    const r2g=makeGroup('r2','2º Turno · Presidente',r2Keys.map(k=>buttons[k]),live,'r2','');
+    const r2g=makeGroup('r2','2º Turno · 25/10',r2Keys.map(k=>buttons[k]),live,'r2','');
     const election=makeGroup('live','1º Turno · Resultado',liveKeys.map(k=>buttons[k]),live,'live','');
     const system=makeGroup('system','Sistema',systemKeys.map(k=>buttons[k]),live,'system','');
     const groups=[r2g,election,system];
@@ -3463,6 +3525,7 @@ calc();renderLive();updateElectionClock();
     'r2-hub':{glyph:'◐',label:'Probabilidades'},
     'r2-mkt':{glyph:'$',label:'Mercados de previsão'},
     'r2-apoios':{glyph:'✚',label:'Apoios no 2º turno'},
+    'r2-gov':{glyph:'⌂',label:'Governadores · 2º turno'},
     'r2-neh':{glyph:'⌁',label:'Nordeste histórico'},
     'r2-regions':{glyph:'▦',label:'Regiões & Estados'},
     'r2-path':{glyph:'↗',label:'Caminho da vitória'},
@@ -3698,7 +3761,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V15.8 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V15.8 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V15.8 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V15.9 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V15.9 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V15.9 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3780,7 +3843,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V15.8 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V15.9 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -5921,6 +5984,7 @@ const V11_ICON={
   'r2-live':['#10B981','#22D3EE','<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><path d="M12 12l5.8-5.8"/><circle cx="12" cy="12" r="1.2" fill="#fff" stroke="none"/><circle cx="16.4" cy="9.2" r="1.1" fill="#fff" stroke="none"/>'],
   'r2-goal':['#F43F5E','#F59E0B','<circle cx="11" cy="13" r="7.5"/><circle cx="11" cy="13" r="3.8"/><circle cx="11" cy="13" r="1" fill="#fff" stroke="none"/><path d="M11 13l8-8M16 5h3v3"/>'],
   'r2-ne':['#F59E0B','#EA580C','<circle cx="12" cy="10" r="3.6"/><path d="M12 3v1.6M5.6 5.6l1.1 1.1M18.4 5.6l-1.1 1.1M3.5 10h1.6M18.9 10h1.6"/><path d="M3 17h18M6 20.5h12"/>'],
+  'r2-gov':['#0F766E','#7C3AED','<path d="M3.5 10L12 4l8.5 6"/><path d="M5.5 10v9M9.5 10v9M14.5 10v9M18.5 10v9"/><path d="M3 20.5h18"/>'],
   'r2-apoios':['#0EA5E9','#7C3AED','<circle cx="9" cy="8" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0"/><path d="M18 7.5v6M15 10.5h6"/>'],
   'r2-neh':['#B45309','#DC2626','<path d="M3.5 12a8.5 8.5 0 1 0 2.5-6"/><path d="M3.5 4.5V8h3.5"/><path d="M8 14.5l2.6-2.6 2.2 2.2 3.4-3.6"/>'],
   'r2-hub':['#8B5CF6','#EC4899','<path d="M4 16a8 8 0 0 1 16 0"/><path d="M6.3 10.3l1.2 1M12 8v1.6M17.7 10.3l-1.2 1"/><path d="M12 16l3.6-4.4"/><circle cx="12" cy="16" r="1.5" fill="#fff" stroke="none"/><path d="M4 19.5h16"/>'],
@@ -5941,7 +6005,7 @@ const V11_SUBS=[['r2-sum','Visão geral','top'],['r2-lab','Antes da eleição ·
 function v11Subs(){const g=document.querySelector('.sideAccordion[data-group="r2"] .sideGroupBody');if(!g)return;
   V11_SUBS.forEach(([k,label,cls])=>{const t=g.querySelector(`.sideTab[data-target="${k}"]`);if(!t)return;const prev=t.previousElementSibling;if(prev&&prev.classList.contains('sideSub')&&prev.dataset.k===k)return;
     g.querySelectorAll(`.sideSub[data-k="${k}"]`).forEach(x=>x.remove());const d=document.createElement('div');d.className='sideSub '+cls;d.dataset.k=k;d.setAttribute('role','presentation');d.innerHTML=`<i></i><span>${label}</span>`;t.before(d)})}
-const V11_EMOJI={'r2-sum':'📋','r2-live':'📈','r2-ne':'🌵','r2-path':'🏁','r2-goal':'🎯','r2-regions':'🗺️','r2-hub':'🎲','r2-mkt':'💰','r2-apoios':'🤝','r2-capitals':'🏙️','r2-neh':'📜','r2-lab':'📊','count':'🗳️','live-regions':'🧭','live-exterior':'✈️','audit':'🔒','overview':'📋'};
+const V11_EMOJI={'r2-sum':'📋','r2-live':'📈','r2-ne':'🌵','r2-path':'🏁','r2-goal':'🎯','r2-regions':'🗺️','r2-hub':'🎲','r2-mkt':'💰','r2-apoios':'🤝','r2-gov':'🏛️','r2-capitals':'🏙️','r2-neh':'📜','r2-lab':'📊','count':'🗳️','live-regions':'🧭','live-exterior':'✈️','audit':'🔒','overview':'📋'};
 const v11emo=k=>V11_EMOJI[k]?`<span class="v11Emo" aria-hidden="true">${V11_EMOJI[k]}</span>`:null;
 function v11Icons(){try{v11Subs()}catch(e){}
   document.querySelectorAll('.sideTab[data-target]').forEach(b=>{const ic=V11_ICON[b.dataset.target];const s=b.querySelector('.sideIcon');if(!ic||!s)return;
@@ -6285,7 +6349,7 @@ function renderPollBoard(){const el=$('pbBody');if(!el)return;
       return}
     const bg=parse(s.backgroundColor);let darkBg=false;
     if(bg&&bg.a>.4&&lum(bg)>.78){save(e,'background-color',mapBg(bg));darkBg=true}
-    const bi=s.backgroundImage;if(bi&&bi!=='none'&&/gradient/.test(bi)&&!/url\(/.test(bi)&&!e.matches('.r2Call,.lvNeed')){const cs=[...bi.matchAll(/rgba?\([^)]+\)/g)].map(m=>parse(m[0])).filter(Boolean);if(cs.length&&cs.every(c=>c.a<.2||lum(c)>.75)){save(e,'background-image','none');if(!darkBg)save(e,'background-color',mapBg(cs.find(c=>c.a>=.2)||cs[0]))}}
+    const bi=s.backgroundImage;if(bi&&bi!=='none'&&/gradient/.test(bi)&&!/url\(/.test(bi)&&!e.matches('.r2Call,.lvNeed,.gvCard,.gvChip')){const cs=[...bi.matchAll(/rgba?\([^)]+\)/g)].map(m=>parse(m[0])).filter(Boolean);if(cs.length&&cs.every(c=>c.a<.2||lum(c)>.75)){save(e,'background-image','none');if(!darkBg)save(e,'background-color',mapBg(cs.find(c=>c.a>=.2)||cs[0]))}}
     const bc=parse(s.borderTopColor);if(bc&&s.borderTopWidth!=='0px'&&lum(bc)>.8&&sat(bc)<.25)save(e,'border-color',css(LINE));
     const hasTxt=[...e.childNodes].some(n=>n.nodeType===3&&n.textContent.trim());if(hasTxt||/^(INPUT|SELECT|TEXTAREA|BUTTON)$/.test(e.tagName)){const c=parse(s.color);if(c&&lum(c)<.5)save(e,'color',mapText(c))}}
   function restore(scope){(scope||document).querySelectorAll('[data-v12o]').forEach(e=>{const o=JSON.parse(e.dataset.v12o);Object.entries(o).forEach(([k,v])=>{if(v)e.style.setProperty(k,v);else e.style.removeProperty(k)});delete e.dataset.v12o})}
@@ -6302,7 +6366,7 @@ function renderPollBoard(){const el=$('pbBody');if(!el)return;
 /* V14.5 · Noite da apuração: a partir das 17h (Brasília) de 25/10 o grupo "Noite da apuração" sobe para logo abaixo do Resumão
    e a Projeção ao vivo ganha o selo AO VIVO. Também vale durante a simulação, para conferir antes. */
 (function(){
-  const START=Date.parse('2026-10-25T17:00:00-03:00'),LIVE=['r2-live','r2-path','r2-ne','r2-goal'];
+  const START=Date.parse('2026-10-25T17:00:00-03:00'),LIVE=['r2-live','r2-gov','r2-path','r2-ne','r2-goal'];
   const on=()=>Date.now()>=START||(typeof S!=='undefined'&&!!S.demo)||/[?&]aovivo=1\b/.test(location.search);
   function apply(){try{
     const sum=document.querySelector('.sideTab[data-target="r2-sum"]');if(!sum)return;const g=sum.parentElement;
@@ -6316,6 +6380,109 @@ function renderPollBoard(){const el=$('pbBody');if(!el)return;
   }catch(e){}}
   apply();setTimeout(apply,800);setTimeout(apply,2500);setInterval(apply,15000);document.addEventListener('click',()=>setTimeout(apply,300),true);
 })();
+
+/* ===================== V15.9 · GOVERNADORES · 2º TURNO (6 estados) =====================
+   Lê os arquivos oficiais do TSE da eleição estadual do 2º turno (6260, cargo 3) e, como referência,
+   o 1º turno de governador (6259). Ordem fixa dos candidatos = colocação no 1º turno (o pêndulo não troca de lado). */
+const GOV_CODE='6260',GOV_R1='6259';
+const GOV_UFS=[['AM','Amazonas'],['AC','Acre'],['DF','Distrito Federal'],['ES','Espírito Santo'],['RN','Rio Grande do Norte'],['TO','Tocantins']];
+const GOV_COL=['#0F766E','#7C3AED'];
+const GOV_FEM=new Set(['AC11','AM22','DF11','TO44']);
+const GOV={d:lsGet('ag2026_v15_gov2',{}),r1:lsGet('ag2026_v15_gov1',{}),busy:false,last:0,ok:0,tried:0,sim:null};
+const govUrl=(c,uf)=>{const u=uf.toLowerCase();return`${TSE}${c}/dados/${u}/${u}-c0003-e00${c}-u.json`};
+const govTitle=s=>String(s||'').toLowerCase().replace(/(^|\s|-)(\S)/g,(m,a,b)=>a+b.toUpperCase()).replace(/\b(De|Da|Do|Dos|Das|E)\b/g,x=>x.toLowerCase());
+function govParse(d){
+  if(!d||typeof d!=='object')throw new Error('JSON vazio');const c=[];
+  (d.carg||[]).forEach(cg=>{if(cg&&cg.cd!==undefined&&+cg.cd!==3)return;(cg.agr||[]).forEach(a=>(a.par||[]).forEach(p=>(p.cand||[]).forEach(x=>c.push({n:String(x.n||''),nm:x.nm||'',nmu:x.nmu||x.nm||'',party:p.sg||x.cc||'',col:a.nm||'',votes:int(x.vap),pct:num(x.pvap),e:x.e==='s',st:x.st||x.dvt||''}))))});
+  if(!c.length)throw new Error('sem candidatos a governador');
+  const s=d.s||{},e=d.e||{},v=d.v||{};
+  const o={pst:num(s.pst),st:int(s.st),sTot:int(s.ts),te:int(e.te),est:int(e.est),comp:int(e.c),vv:int(v.vv),vb:int(v.vb),vn:int(v.tvn??v.vn),
+    ts:d.dt&&d.ht?`${d.dt} ${d.ht}`:'',final:String(d.tf||'').toLowerCase()==='s',cands:c};
+  if(!Number.isFinite(o.pst))o.pst=o.sTot?100*o.st/o.sTot:0;if(!o.vv)o.vv=c.reduce((t,x)=>t+x.votes,0);return o}
+/* ordem fixa: 1º colocado no 1º turno à esquerda */
+function govPair(uf){const g=GOV.sim?GOV.sim.d[uf]:GOV.d[uf],r1=GOV.r1[uf];if(!g)return null;
+  let cs=[...g.cands];if(r1&&r1.cands)cs.sort((a,b)=>{const ra=r1.cands.find(x=>x.n===a.n),rb=r1.cands.find(x=>x.n===b.n);return((rb&&rb.votes)||0)-((ra&&ra.votes)||0)});else cs.sort((a,b)=>+a.n-+b.n);
+  return{g,A:cs[0],B:cs[1],r1}}
+function govState(uf){const p=govPair(uf);if(!p||!p.A||!p.B)return null;const{g,A,B,r1}=p,vv=A.votes+B.votes;
+  const sA=vv?A.votes/vv:NaN,lead=vv?(A.votes>=B.votes?0:1):-1,W=lead===0?A:lead===1?B:null,Lz=lead===0?B:lead===1?A:null,diff=W?W.votes-Lz.votes:0;
+  const restE=Math.max(0,(g.te||0)-(g.est||0)),turn=g.est?(g.vv/g.est):.78,restV=restE*clamp(turn||.78,.3,1);
+  let need=NaN;if(W&&restV>0)need=(restV+diff)/(2*restV);
+  let k='wait';if(vv>0)k='lead';if(W&&diff>restE&&g.pst>0)k='math';if((W&&W.e)||(g.final&&W))k='elected';
+  const r1A=r1&&r1.cands&&r1.cands.find(x=>x.n===A.n),r1B=r1&&r1.cands&&r1.cands.find(x=>x.n===B.n);
+  const ref=r1A&&r1B&&(r1A.votes+r1B.votes)?r1A.votes/(r1A.votes+r1B.votes):NaN;
+  return{uf,g,A,B,vv,sA,lead,W,diff,restV,need,k,r1A,r1B,ref}}
+const govShort=c=>govTitle(c.nmu).replace(/^Professora /,'Prof.ª ');
+const govEleito=(uf,c)=>GOV_FEM.has(uf+c.n)?'Eleita':'Eleito';
+function govGauge(svg,st){if(!svg)return;const seg=48,A=GOV_COL[0],B=GOV_COL[1];let s='';
+  for(let i=0;i<seg;i++){const v0=i/seg,v1=(i+1)/seg,m=(v0+v1)/2,c=m<.5?lerpColor(A.slice(1),'e2e8f0',m/.5):lerpColor('e2e8f0',B.slice(1),(m-.5)/.5);s+=`<path d="${arcPath(v0,v1+.002,118,160)}" fill="${c}"/>`}
+  const[hx1,hy1]=arcPt(.5,166),[hx2,hy2]=arcPt(.5,110);s+=`<line x1="${hx1}" y1="${hy1}" x2="${hx2}" y2="${hy2}" stroke="#fff" stroke-width="3"/>`;
+  if(Number.isFinite(st.ref)){const[x1,y1]=arcPt(1-st.ref,172),[x2,y2]=arcPt(1-st.ref,106);s+=`<line class="r2Mark" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#0b1324" stroke-width="3.5" stroke-dasharray="6 4" stroke-linecap="round"/><circle class="r2MarkDot" cx="${x1}" cy="${y1}" r="5" fill="#0b1324"/>`}
+  const v=Number.isFinite(st.sA)?1-st.sA:.5,has=Number.isFinite(st.sA);
+  s+=`<g class="r2Needle" style="transform-origin:${GAUGE.cx}px ${GAUGE.cy}px;transform:rotate(${(v-.5)*180}deg)${has?'':';opacity:.35'}"><path d="M${GAUGE.cx-6},${GAUGE.cy} L${GAUGE.cx},${GAUGE.cy-152} L${GAUGE.cx+6},${GAUGE.cy} Z" fill="#0b1220"/></g><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="12" fill="#0b1220"/><circle cx="${GAUGE.cx}" cy="${GAUGE.cy}" r="4.5" fill="#fff"/>`;
+  const val=has?P(100*Math.max(st.sA,1-st.sA),1):'—',vc=has?(st.lead===0?A:B):'#94a3b8';
+  s+=`<text class="r2GaugeNum" x="${GAUGE.cx}" y="${GAUGE.cy+58}" text-anchor="middle" font-size="40" font-weight="900" letter-spacing="-1" fill="${vc}">${E(val)}</text>`;
+  svg.setAttribute('viewBox','30 38 340 232');svg.innerHTML=s}
+function govStatusTxt(st){const pre=Date.now()<R2_START&&!GOV.sim;
+  if(st.k==='elected')return['def',`${govEleito(st.uf,st.W)} · TSE`];
+  if(st.k==='math')return['def','Definido matematicamente'];
+  if(st.k==='lead')return['run','Apurando · '+P(st.g.pst,2)];
+  return['wait',pre?'Começa 25/10 · 17h':'Aguardando seções']}
+function govCard(st){const[cls,txt]=govStatusTxt(st),A=GOV_COL[0],B=GOV_COL[1],nm=(GOV_UFS.find(x=>x[0]===st.uf)||[])[1]||st.uf;
+  const def=st.k==='elected'||st.k==='math';let ct=0;
+  if(st.k==='lead'&&Number.isFinite(st.need))ct=clamp((st.need-.5)/.3,0,1)*clamp(st.g.pst/25,.25,1);if(def)ct=1;
+  const cc=st.lead===1?'124,58,237':'15,118,110';
+  const row=(c,col)=>{const pc=st.vv?100*c.votes/st.vv:NaN,w=st.W&&st.W.n===c.n;return`<div class="gvC${w&&st.vv?' win':''}" style="--c:${col}"><i></i><div class="gvN"><b>${E(govTitle(c.nmu))}</b><small>${def&&w?`<em class="gvTick">✓ ${govEleito(st.uf,c)}</em> `:''}${E(c.party)} · ${E(c.n)}${c.col&&c.col.toUpperCase()!==String(c.party).toUpperCase()?' · '+E(govTitle(c.col)):''}</small></div><div class="gvV"><strong>${st.vv?P(pc,2):'—'}</strong><small>${st.vv?INT(c.votes)+' votos':'aguardando'}</small></div></div>`};
+  const pA=st.vv?100*st.sA:50;
+  let virar='—';if(st.k==='lead'&&Number.isFinite(st.need)){const L=govShort(st.lead===0?st.B:st.A);virar=st.need>=1?`impossível pela estimativa`:`${L} precisa de ${P(100*st.need,0)} do que falta`}else if(def)virar=st.k==='elected'?'resultado oficial':'não dá mais para virar';
+  const r1=st.r1A&&st.r1B?`<p class="gvR1"><b>1º turno:</b> ${E(govShort(st.A))} ${P(st.r1A.pct,2)} × ${E(govShort(st.B))} ${P(st.r1B.pct,2)} <span>· entre os dois: ${P(100*st.ref,1)} × ${P(100-100*st.ref,1)}</span></p>`:'';
+  return`<article class="gvCard${st.vv?(st.lead===1?' wB':' wA'):''}${def?' def':''}" style="--ct:${ct.toFixed(3)};--cc:${cc}" data-uf="${st.uf}">
+    <div class="gvHead"><div class="gvUfBox"><span class="gvUf">${st.uf}</span><b>${E(nm)}</b></div><span class="gvSt ${cls}">${cls==='run'?'<i></i>':''}${E(txt)}</span></div>
+    <div class="r2GaugeWrap gvGW"><svg class="r2Gauge gvGauge" id="gvG-${st.uf}"></svg></div>
+    <div class="gvBar" aria-hidden="true"><span style="width:${pA.toFixed(2)}%;background:${A}"></span><span style="width:${(100-pA).toFixed(2)}%;background:${B}"></span><em></em></div>
+    <div class="gvCands">${row(st.A,A)}${row(st.B,B)}</div>
+    <div class="gvFoot"><div><small>Apurado</small><b>${P(st.g.pst||0,2)}</b></div><div><small>Diferença</small><b>${st.vv?INT(st.diff)+' votos':'—'}</b></div><div class="gvNeed"><small>Para virar</small><b>${E(virar)}</b></div></div>
+    ${r1}</article>`}
+function renderGov(){const box=$('gvGrid');if(!box)return;const sts=GOV_UFS.map(([uf])=>govState(uf));
+  const ready=sts.filter(Boolean);
+  box.innerHTML=ready.length?ready.map(govCard).join(''):`<div class="r2Card gvEmpty">Carregando os arquivos oficiais do TSE dos 6 estados…</div>`;
+  ready.forEach(st=>govGauge($('gvG-'+st.uf),st));
+  /* placar resumido */
+  const strip=$('gvStrip');if(strip)strip.innerHTML=GOV_UFS.map(([uf])=>{const st=sts.find(x=>x&&x.uf===uf);if(!st)return`<a class="gvChip" href="#gvG-${uf}"><b>${uf}</b><span>—</span></a>`;
+    const def=st.k==='elected'||st.k==='math',col=st.lead===1?GOV_COL[1]:GOV_COL[0];
+    return`<button type="button" class="gvChip${def?' def':''}" data-gvgo="${uf}" style="--c:${st.vv?col:'#94a3b8'}"><b>${uf}</b><span>${st.vv?E(govShort(st.W)):'0% apurado'}</span><small>${st.vv?`<strong>${P(100*Math.max(st.sA,1-st.sA),1)}</strong> · `:''}${def?(st.k==='elected'?'✓ '+govEleito(uf,st.W).toLowerCase():'✓ definido'):st.vv?P(st.g.pst,0)+' apurado':'aguardando'}</small></button>`}).join('');
+  /* estado da conexão */
+  const sEl=$('gvSrc');if(sEl){const pre=Date.now()<R2_START;let cls='',h='';
+    if(GOV.sim){cls='';h='<b>Simulação</b> · números sorteados para teste; os dados do TSE não são alterados.'}
+    else if(GOV.ok===6){cls='ok';const t=GOV.last?new Date(GOV.last).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}):'';h=pre?`<b>TSE conectado</b> · arquivos oficiais do 2º turno de governador já publicados para os 6 estados (0% apurado). A apuração começa domingo, 25/10, às 17h de Brasília (16h de Manaus).`:`<b>AO VIVO · TSE</b> · 6 de 6 estados lidos${t?' · última leitura às '+t+' (horário do seu aparelho)':''} · atualiza a cada 60 s.`}
+    else if(GOV.tried){cls=pre?'':'err';h=`<b>${GOV.ok} de 6 estados lidos</b> nesta rodada${ready.length?' · mantendo a última leitura dos demais':''}. Nova tentativa em 60 s.`}
+    else h='Conectando ao TSE…';sEl.className='r2Status '+cls;$('gvSrcTxt').innerHTML=h}
+  const bd=$('gvBadge');if(bd){const live=Date.now()>=R2_START||!!GOV.sim;bd.className='r2Badge '+(live?'live':'ok');$('gvBadgeTxt').textContent=GOV.sim?'SIMULAÇÃO em andamento':live?'AO VIVO · TSE':'Começa 25/10 · 17h'}
+  const sb=$('gvSimBtn');if(sb)sb.textContent=GOV.sim?'Encerrar simulação':'Simular apuração (teste)'}
+async function govLoadR1(){const need=GOV_UFS.map(x=>x[0]).filter(uf=>!(GOV.r1[uf]&&GOV.r1[uf].cands));if(!need.length)return;let got=0;
+  await pool(need,3,async uf=>{const{text}=await fetchText(govUrl(GOV_R1,uf),12000);GOV.r1[uf]=govParse(jsonFromText(text));got++});if(got)lsSet('ag2026_v15_gov1',GOV.r1)}
+async function govCycle(force){if(GOV.busy)return;const live=Date.now()>=R2_START;if(!force&&!live&&GOV.ok===6)return;GOV.busy=true;
+  try{try{await govLoadR1()}catch(e){}
+    const ufs=GOV_UFS.map(x=>x[0]).filter(uf=>force||!(GOV.d[uf]&&GOV.d[uf].final&&GOV.d[uf].pst>=100));let ok=6-ufs.length;GOV.tried++;
+    await pool(ufs,3,async uf=>{const{text}=await fetchText(govUrl(GOV_CODE,uf),12000);const g=govParse(jsonFromText(text));const old=GOV.d[uf];if(!old||!(g.pst<old.pst&&old.pst>0))GOV.d[uf]=g;ok++});
+    GOV.ok=ok;if(ok)GOV.last=Date.now();lsSet('ag2026_v15_gov2',GOV.d)}finally{GOV.busy=false}
+  if(document.body.dataset.activeTab==='r2-gov')renderGov()}
+/* simulação local para conferir o painel antes de domingo */
+function govSimStart(){if(GOV.sim){clearInterval(GOV.sim.timer);GOV.sim=null;renderGov();return}
+  const truth={};GOV_UFS.forEach(([uf])=>{const p=govPair(uf)||{};const r1=GOV.r1[uf],A=p.A,B=p.B;let ref=.5;if(r1&&A&&B){const a=r1.cands.find(x=>x.n===A.n),b=r1.cands.find(x=>x.n===B.n);if(a&&b)ref=a.votes/(a.votes+b.votes)}
+    truth[uf]={s:clamp(ref-.06+Math.random()*.12,.3,.7),sp:.75+Math.random()*.5,te:(GOV.d[uf]&&GOV.d[uf].te)||1e6}});
+  GOV.sim={step:0,truth,d:{},timer:null};
+  const tick=()=>{const D=GOV.sim;if(!D)return;D.step++;const t=D.step/30;let done=true;
+    GOV_UFS.forEach(([uf])=>{const base=GOV.d[uf];if(!base)return;const x=D.truth[uf],pi=clamp(t*x.sp,0,1);if(pi<1)done=false;const est=Math.round(x.te*pi),vv=Math.round(est*.74),s=clamp(x.s+(.02*(Math.random()-.5))*(1-pi),.05,.95);
+      const p=govPair(uf);if(!p)return;const vA=Math.round(vv*s),vB=vv-vA;
+      D.d[uf]={...base,pst:100*pi,est,vv,final:pi>=1,cands:base.cands.map(c=>({...c,votes:c.n===p.A.n?vA:c.n===p.B.n?vB:0,e:pi>=1&&(c.n===p.A.n?vA>vB:vB>vA)}))}});
+    renderGov();if(done){clearInterval(D.timer);D.timer=null}};
+  GOV.sim.timer=setInterval(tick,900);tick()}
+document.addEventListener('click',e=>{if(e.target.closest&&e.target.closest('#gvSimBtn')){govSimStart();return}
+  const g=e.target.closest&&e.target.closest('[data-gvgo]');if(g){const c=document.querySelector(`.gvCard[data-uf="${g.dataset.gvgo}"]`);if(c)c.scrollIntoView({behavior:'smooth',block:'start'})}});
+setTimeout(()=>govCycle(true).catch(()=>{}),1500);
+setInterval(()=>{if(Date.now()>=R2_START&&!document.hidden)govCycle().catch(()=>{})},60e3);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()>=R2_START)govCycle().catch(()=>{})});
+window.V8_gov={GOV,cycle:govCycle,state:govState,sim:govSimStart};
 /* ===================== ORQUESTRAÇÃO ===================== */
 function setStatus(cls,html){const el=$('r2DataStatus');if(!el)return;el.className='r2Status '+cls;$('r2DataStatusText').innerHTML=html}
 function describeBase(){const b=S.base;if(!b)return;
@@ -6329,8 +6496,8 @@ function run(){
   S.res=res;try{runLab()}catch(e){console.warn('lab',e)}
   computeLive();renderAll();
 }
-const PAGE_RENDER={'r2-live':['renderLiveTab','renderPendulums'],'r2-goal':['renderGoal'],'r2-ne':['renderNE'],'live-regions':['renderR1Map'],'r2-hub':['renderHub','renderParams','renderLive'],'r2-regions':['renderRegions'],'r2-path':['renderPath','renderOpen'],'r2-capitals':['renderCapitals'],'r2-lab':['renderPollBoard','renderLab'],'r2-mkt':['renderMkt'],'r2-neh':['renderNEH'],'r2-apoios':['renderApoios'],'r2-sum':['renderSum','renderOpenSum']};
-const FN={renderParams,renderHub,renderRegions,renderPath,renderCapitals,renderLab,renderLive,renderLiveTab,renderR1Map,renderPendulums,renderGoal,renderNE,renderMkt,renderNEH,renderSum,renderApoios,renderOpen,renderOpenSum,renderPollBoard};
+const PAGE_RENDER={'r2-gov':['renderGov'],'r2-live':['renderLiveTab','renderPendulums'],'r2-goal':['renderGoal'],'r2-ne':['renderNE'],'live-regions':['renderR1Map'],'r2-hub':['renderHub','renderParams','renderLive'],'r2-regions':['renderRegions'],'r2-path':['renderPath','renderOpen'],'r2-capitals':['renderCapitals'],'r2-lab':['renderPollBoard','renderLab'],'r2-mkt':['renderMkt'],'r2-neh':['renderNEH'],'r2-apoios':['renderApoios'],'r2-sum':['renderSum','renderOpenSum']};
+const FN={renderGov,renderParams,renderHub,renderRegions,renderPath,renderCapitals,renderLab,renderLive,renderLiveTab,renderR1Map,renderPendulums,renderGoal,renderNE,renderMkt,renderNEH,renderSum,renderApoios,renderOpen,renderOpenSum,renderPollBoard};
 function renderAll(){describeBase();Object.values(FN).forEach(f=>{try{f()}catch(e){console.warn('V8 render',f.name,e)}});try{renderReading(document.body.dataset.activeTab)}catch(e){}}
 function renderPage(k){(PAGE_RENDER[k]||[]).forEach(n=>{try{FN[n]()}catch(e){console.warn('V8',n,e)}});try{renderReading(k)}catch(e){}}
 async function loadR1(force){
@@ -6352,6 +6519,7 @@ const NAV=[['r2-sum','Resumão','Resumão do 2º turno','Quem deve ganhar, por q
   ['r2-goal','Metas de vitória','Metas de vitória','Onde é preciso melhorar para vencer e, na apuração, se a meta está sendo alcançada.','<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/>'],
   ['r2-ne','Fator Nordeste','Fator Nordeste','Quanto Flávio precisa estar na frente antes das urnas do Nordeste chegarem.','<path d="M4 18h16"/><path d="M6 18V9l6-4 6 4v9"/><path d="M10 18v-5h4v5"/>'],
   ['r2-mkt','Mercados de previsão','Mercados de previsão','Cotações de Polymarket, Kalshi, Betfair e outras casas, convertidas em chance de vitória e comparadas ao modelo.','<path d="M4 19h16"/><path d="M6 16l4-5 3 3 5-7"/><circle cx="18" cy="7" r="1.6" fill="currentColor"/>'],
+  ['r2-gov','Governadores · 2º turno','Governadores · 2º turno','Apuração ao vivo do 2º turno para governador em AM, AC, DF, ES, RN e TO, direto do TSE.','<path d="M4 20h16"/><path d="M5 20V10h14v10"/><path d="M3.5 10L12 4l8.5 6"/><path d="M9 20v-6h6v6"/>'],
   ['r2-apoios','Apoios no 2º turno','Apoios no 2º turno','Quem declarou apoio a Flávio e a Lula — ex-candidatos, governadores, partidos e lideranças — com os votos de cada um.','<path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0"/><path d="M18 8v6M15 11h6"/>'],
   ['r2-neh','Nordeste histórico','Nordeste · 1989–2026','Série histórica do voto no PT no Nordeste, estado por estado, comparada ao Brasil.','<path d="M4 19h16"/><path d="M5 15l4-4 3 2 6-7"/><path d="M5 5v14"/>'],
   ['r2-regions','Regiões & Estados','Regiões & Estados','Cada região aberta por estado: probabilidade, saldo, metas de empate.','<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>'],
