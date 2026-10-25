@@ -519,7 +519,7 @@ body.election-live .tseNavTab .sideIcon{color:#fff;border-color:rgba(248,113,113
 
 <script id="v8-phase">window.V8_isLive=function(){const t=Date.now();return (t>=Date.parse('2026-10-04T17:00:00-03:00')&&t<Date.parse('2026-10-05T06:00:00-03:00'))||(t>=Date.parse('2026-10-25T17:00:00-03:00')&&t<Date.parse('2026-10-26T06:00:00-03:00'))};</script>
 <style id="v8-runoff-css">
-/* ===== V15.14 · 2º TURNO · central estatística ===== */
+/* ===== V15.15 · 2º TURNO · central estatística ===== */
 .r2Hero{position:relative;overflow:hidden;margin-top:0;padding:26px 28px;border-radius:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:18px;
   background:radial-gradient(circle at 92% 0%,rgba(59,130,246,.30),transparent 22rem),radial-gradient(circle at 0% 120%,rgba(239,68,68,.24),transparent 22rem),linear-gradient(135deg,#0b1220 0%,#14233d 58%,#1a2b4a 100%);box-shadow:0 20px 50px rgba(11,18,32,.18)}
 .r2Hero h2{margin:5px 0 7px;font-size:27px;letter-spacing:-.035em}.r2Hero p{margin:0;max-width:860px;color:#c3cfdf;font-size:13.3px;line-height:1.6}
@@ -1322,6 +1322,12 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 #r2-gov-section .r2Status{margin-top:12px}
 @media(max-width:1180px){.gvGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.gvStrip{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:680px){.gvGrid{grid-template-columns:1fr}.gvStrip{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.gvFoot{grid-template-columns:1fr 1fr}.gvFoot .gvNeed{grid-column:1/-1}}
+#v15Aviso{display:flex;gap:12px;align-items:flex-start;margin:0 0 14px;padding:12px 16px;border-radius:14px;background:#fff7ed;border:1px solid #fdba74;border-left:6px solid #ea580c;box-shadow:var(--v12-shadow);color:#7c2d12}
+#v15Aviso .v15AvIc{font-size:20px;line-height:1.2}
+#v15Aviso b{display:block;font-size:15px;font-weight:900;color:#9a3412;margin-bottom:2px}
+#v15Aviso span{font-size:13.6px;line-height:1.45}
+:root[data-theme="dark"] #v15Aviso{background:#2a1608;border-color:#9a3412;border-left-color:#f97316;color:#fed7aa}
+:root[data-theme="dark"] #v15Aviso b{color:#fdba74}
 .sideTab[data-target="r2-ne"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#b45309)!important}.pageTitleIconChip[data-kind="r2-ne"]{background:linear-gradient(135deg,#f59e0b,#b45309)}.sideTab[data-target="r2-goal"] .sideIcon{background:linear-gradient(135deg,#047857,#2563eb)!important}.pageTitleIconChip[data-kind="r2-goal"]{background:linear-gradient(135deg,#047857,#2563eb)}.sideTab[data-target="r2-live"] .sideIcon{background:linear-gradient(135deg,#16a34a,#0ea5e9)!important}.pageTitleIconChip[data-kind="r2-live"]{background:linear-gradient(135deg,#16a34a,#0ea5e9)}.sideTab[data-target="r2-path"] .sideIcon{background:linear-gradient(135deg,#f59e0b,#ef4444)!important}.pageTitleIconChip[data-kind="r2-path"]{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 </style>
 <style id="v81-hidden-pages">[data-page="overview"],[data-page="trend"],[data-page="polls"],[data-page="institutes"],[data-page="update"],[data-page="states"]{display:none!important}.v7ToastWrap{display:none!important}</style>
@@ -1330,7 +1336,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </head>
 <body>
 <aside class="sidebar" id="sidebar">
-  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V15.14 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
+  <div class="sidebarHead"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>Analytics eleitoral independente</small><span class="brandBadge">V15.15 · 2º TURNO</span></div></div><button class="sidebarClose" id="sidebarClose" type="button" aria-label="Fechar menu">×</button></div>
   <nav class="sideNav" aria-label="Módulos do painel">
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19V9M12 19V5M19 19v-8M4 19h16"></path></svg></span> Análise</div>
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"></circle><path d="M8.5 8.5a5 5 0 0 0 0 7M15.5 8.5a5 5 0 0 1 0 7M5.5 5.5a9 9 0 0 0 0 13M18.5 5.5a9 9 0 0 1 0 13"></path></svg></span> Eleição ao vivo</div>
@@ -1340,10 +1346,10 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
     <div class="sideGroup"><span class="groupStaticIcon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"></circle><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M18.4 5.6 17 7M7 17l-1.4 1.4"></path></svg></span> Sistema</div>
     <button class="sideTab" data-target="audit"><span class="sideIcon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5c0 5 3.4 8.7 7 10 3.6-1.3 7-5 7-10V6z"></path><path d="m9 12 2 2 4-4"></path></svg></span><span>Transparência</span></button>
   </nav>
-  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V15.14 · 2º TURNO · dados auditáveis · HTML local</div></div>
+  <div class="sidebarFoot"><div class="sideSystem"><i></i><span>Sistema automático ativo</span></div><div>V15.15 · 2º TURNO · dados auditáveis · HTML local</div></div>
 </aside>
 <div class="mobileBackdrop" id="mobileBackdrop"></div>
-<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V15.14 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
+<div class="mobileTopbar"><div class="brand"><div class="brandMark">BR</div><div>Agregador BR 2026<small>V15.15 · 2º TURNO</small></div></div><div class="mobileSection" id="mobileSection">Visão Geral</div><button class="menuToggle" id="menuToggle" aria-label="Abrir menu">☰</button></div>
 <main class="wrap appMain">
 <div class="premiumModuleHead" id="premiumModuleHead" hidden>
   <div>
@@ -1453,7 +1459,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </section>
 
 <section id="diagnosticos" class="card cardPad full page-active" data-page="overview">
-  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V15.14 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Diagnósticos do agregado</h2><p>Indicadores de concentração dos pesos e dispersão entre institutos.</p></div><span class="tag">V15.15 · 2º TURNO</span></div>
   <div class="diagGrid">
     <div class="diag"><span>Institutos ativos</span><strong id="diagN">—</strong><small>Última rodada de cada instituto.</small></div>
     <div class="diag"><span>N efetivo dos pesos</span><strong id="diagNeff">—</strong><small>1 / Σ peso²; mede concentração.</small></div>
@@ -2403,7 +2409,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 
 
 <section id="auto-update" class="card cardPad full" data-page="update">
-  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V15.14 · 2º TURNO · automação contínua</span></div>
+  <div class="sectionTitle"><div><h2>Atualização automática de pesquisas</h2><p>O painel verifica pesquisas presidenciais nacionais automaticamente, evita duplicidades pelo registro TSE e recalcula todo o agregador sem intervenção manual.</p></div><span class="tag" id="autoTag">V15.15 · 2º TURNO · automação contínua</span></div>
   <div class="analyticsPanel tseAutomationBox" id="pollAutomationBox" style="margin-bottom:14px">
     <div class="tseAutoTop">
       <div class="tseAutoTitle"><span class="tseAutoDot active" id="pollAutoDot"></span><div><h3 id="pollAutoHeadline">Automação de pesquisas ativa</h3><p>O painel consulta as fontes sozinho. Nenhuma ação manual é necessária.</p></div></div>
@@ -2459,7 +2465,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
 </section>
 
 <section id="auditoria" class="card cardPad full" data-page="audit">
-  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V15.14 · 2º TURNO</span></div>
+  <div class="sectionTitle"><div><h2>Transparência e metodologia</h2><p>Fórmulas, fontes, limitações, histórico técnico e controles de reprodução do painel.</p></div><span class="tag">V15.15 · 2º TURNO</span></div>
   <div class="auditGrid">
     <div class="analyticsPanel">
       <h3>Modelo principal</h3>
@@ -2476,7 +2482,7 @@ body.v12 .pgErr{display:block;font-style:normal;font-size:12.6px;font-weight:700
     <div class="analyticsPanel"><h3>Notas de interpretação</h3><div class="disclaimer"><b>Intervalo bootstrap:</b> descreve a variabilidade do conjunto de pesquisas sob este algoritmo. Não é margem de erro do resultado eleitoral e não representa probabilidade de vitória.</div><ul><li>Conferência definitiva: registro PesqEle/TSE de cada levantamento.</li><li>Pesquisas estaduais não são tratadas como nacionais de forma direta.</li><li>Apuração TSE permanece separada das pesquisas.</li><li>O painel não atribui nota, tier ou ranking político aos candidatos ou institutos.</li><li>Visual inspirado no EleiçãoBR; projeto independente, sem afiliação.</li></ul></div>
   </div>
 </section>
-<div class="footer">Agregador BR 2026 · V15.14 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
+<div class="footer">Agregador BR 2026 · V15.15 · 2º TURNO · projeto independente · dados auditáveis · atualização automática · fontes públicas</div>
 </main>
 
 
@@ -3077,7 +3083,7 @@ calc();renderLive();updateElectionClock();
   const pollTools=document.querySelector('#pesquisas .tableTools .toolBtns'); if(pollTools) pollTools.remove();
 
   // Texto/estado de automação.
-  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V15.14 · 2º TURNO · 100% automático';
+  const autoTag=document.getElementById('autoTag'); if(autoTag) autoTag.textContent='V15.15 · 2º TURNO · 100% automático';
   const autoRunLog=document.getElementById('autoRunLog'); if(autoRunLog && /Buscar e importar/i.test(autoRunLog.textContent||'')) autoRunLog.innerHTML='<div class="statePollEmpty" style="border:0">Aguardando a primeira verificação automática.</div>';
   const autoQuick=document.getElementById('autoQuick'); if(autoQuick && /nunca/i.test(autoQuick.textContent||'')) autoQuick.innerHTML='Automação de pesquisas: <b>inicializando…</b>';
   const sideUpdate=[...document.querySelectorAll('.sideTab')].find(b=>b.dataset.target==='update'); if(sideUpdate){ const t=[...sideUpdate.childNodes].find(n=>n.nodeType===3 && /Atualizar|Automação/.test(n.textContent)); if(t)t.textContent=' Automação'; }
@@ -3761,7 +3767,7 @@ calc();renderLive();updateElectionClock();
   }
 
   function ensureTransparency(){
-    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V15.14 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V15.14 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V15.14 · 2º TURNO';
+    const host=$v('auditoria');if(!host||$v('v7TransparencyIntro'))return;const intro=document.createElement('div');intro.id='v7TransparencyIntro';intro.innerHTML=`<div class="v7LocalNotice"><b>V15.15 · 2º TURNO · HTML local autônomo.</b> O painel mantém cálculos, histórico e atualizações enquanto estiver aberto. Sem hospedagem não há service worker, push em segundo plano nem sincronização garantida com o navegador fechado; ao retornar à página, o sistema executa o catch-up automático já implementado.</div><div class="v7TransparencyIntro"><div class="v7TransCard"><span>Versão</span><strong>V15.15 · 2º TURNO</strong><small>V7.1 HARDENING preservada, com trajetória descritiva da apuração ao vivo.</small></div><div class="v7TransCard"><span>Modelo</span><strong>Recência + bootstrap</strong><small>Última rodada nacional por instituto; house effect descritivo.</small></div><div class="v7TransCard"><span>Fontes</span><strong>TSE + pesquisas públicas</strong><small>PesqEle para registro; fontes estruturadas e imprensa para resultados.</small></div><div class="v7TransCard"><span>Execução</span><strong>100% local</strong><small>Sem backend próprio e sem envio de dados para servidor do projeto.</small></div></div>`;host.insertBefore(intro,host.children[1]||null);const h=host.querySelector('.sectionTitle h2');if(h)h.textContent='Transparência e metodologia';const tag=host.querySelector('.sectionTitle .tag');if(tag)tag.textContent='V15.15 · 2º TURNO';
   }
 
   function ensureOfficeInsights(){
@@ -3843,7 +3849,7 @@ calc();renderLive();updateElectionClock();
 
   function markSeedValidation(){try{for(const p of polls){if(!p.validationLevel)p.validationLevel=p.autoTseVerified===true?'verified':(p.autoSource?'partial':'base')}}catch(e){}}
   markSeedValidation();pruneNonEssential();try{if(typeof renderPollTable==='function')renderPollTable()}catch(e){}
-  try{const logs=safeGetJSON(KEYS.change,[]),detail='V15.14 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
+  try{const logs=safeGetJSON(KEYS.change,[]),detail='V15.15 · 2º TURNO: V7.1 HARDENING preservada; Resumo Geral mantido; aba Regiões ampliada com percentual explícito de urnas apuradas, resumo acumulado das cinco regiões por candidato e diferenças regionais em votos absolutos e pontos percentuais.';if(!logs.some(x=>x&&x.type==='Hardening'&&x.detail===detail))logChange('Hardening',detail)}catch(e){}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderHealth,{once:true});else renderHealth();
 })();
 </script>
@@ -4704,13 +4710,17 @@ function renderLiveTab(){
   if(!$('r2xCall'))return;const L=S.liveRes,r=S.res,b=S.base;const st=callStatus(L);
   /* banner */
   const call=$('r2xCall');call.className='r2Call '+st.cls+(st.who?(' w'+st.who):'');call.style.setProperty('--ct',(L&&st.who?(st.cls==='def'?1:clamp((Math.max(L.PF,1-L.PF)-.5)/.5,0,1)):0).toFixed(3));
-  if(!L){$('r2xCallLvl').textContent=S.demo?'Simulação':'Aguardando a apuração de 25/10';$('r2xCallWho').textContent='Probabilidade pré-eleitoral: Flávio '+capP(r?r.PF:NaN)+' · Lula '+capP(r?r.PL:NaN);$('r2xCallTxt').textContent='A partir das 17h (Brasília) de 25/10, o painel lê o TSE a cada 60 segundos e recalcula a projeção. Use “Simular uma apuração” para ver como a projeção se comporta.';}
+  if(!L){$('r2xCallLvl').textContent=S.demo?'Simulação':'Aguardando a apuração de 25/10';$('r2xCallWho').textContent='Probabilidade pré-eleitoral: Flávio '+capP(r?r.PF:NaN)+' · Lula '+capP(r?r.PL:NaN);$('r2xCallTxt').textContent='A partir das 17h (Brasília) de 25/10, o painel lê o TSE a cada 60 segundos e recalcula a projeção. Use “Simular uma apuração” para ver como a projeção se comporta.';
+    /* V15.15 · só o exterior apurado: mostra os números oficiais do TSE (Brasil) sem projeção */
+    const nt0=!S.demo&&S.r2nat&&S.r2nat.cands?S.r2nat:null,nd0=nt0?duel(nt0):null;
+    if(nt0&&nd0.L+nd0.F>0){const C0=nd0.L+nd0.F;$('r2xCallLvl').textContent='Apuração iniciada · TSE';$('r2xCallWho').innerHTML=`<span class="pollRed">Lula ${P(100*nd0.L/C0,2)}</span> × <span class="pollBlue">Flávio ${P(100*nd0.F/C0,2)}</span> · ${P(nt0.pst||0,2)} das seções`;
+      $('r2xCallTxt').innerHTML=`O TSE já liberou <b>${INT(nt0.st)} seções</b> (${P(nt0.pst||0,2)}), praticamente todas do <b>exterior</b>: Lula ${INT(nd0.L)} votos × Flávio ${INT(nd0.F)} votos. A projeção estatística começa quando chegarem as primeiras urnas dos estados; o exterior é uma fatia muito pequena do eleitorado e ainda não indica o resultado.`}}
   else{$('r2xCallLvl').textContent=st.lvl+(S.demo?' · SIMULAÇÃO':'');$('r2xCallWho').innerHTML=`${st.who==='F'?'<span class="pollBlue">':'<span class="pollRed">'}${NAME[st.who]}</span> · ${capP(st.who==='F'?L.PF:L.PL)} de probabilidade`;
     $('r2xCallTxt').innerHTML=`${st.txt} Projeção final: <b class="pollBlue">Flávio ${P(100-L.med,2)}</b> × <b class="pollRed">Lula ${P(L.med,2)}</b> (IC 95%: Lula ${nf(L.q.p025,1)}–${nf(L.q.p975,1)}%). Seções apuradas: <b>${P(L.prog,2)}</b>. <small style="color:#64748b">${INT(L.N)} simulações nesta leitura · precisão do cálculo ±${nf(196*L.mcSE,2)} p.p.${L.refined?' (rodada extra: resultado ainda incerto)':''}</small>`}
   /* KPIs */
   const k=(id,v)=>{const e=$(id);if(e)e.textContent=v};
   if(L){k('r2xK1',P(L.prog,2));k('r2xK2',P(100*L.cF/(L.cL+L.cF),2));k('r2xK2s',INT(L.cF)+' votos');k('r2xK3',P(100*L.cL/(L.cL+L.cF),2));k('r2xK3s',INT(L.cL)+' votos');k('r2xK4',MI(L.R));k('r2xK5',needTxt(100*L.needF));k('r2xK6',needTxt(100*L.needL));k('r2xK7',PP(-100*L.delta,2));}
-  else['r2xK1','r2xK2','r2xK3','r2xK4','r2xK5','r2xK6','r2xK7'].forEach(i=>k(i,'—'));
+  else{['r2xK1','r2xK2','r2xK3','r2xK4','r2xK5','r2xK6','r2xK7'].forEach(i=>k(i,'—'));const nt1=!S.demo&&S.r2nat&&S.r2nat.cands?S.r2nat:null,nd1=nt1?duel(nt1):null;if(nt1&&nd1.L+nd1.F>0){const C1=nd1.L+nd1.F;k('r2xK1',P(nt1.pst||0,2));k('r2xK2',P(100*nd1.F/C1,2));k('r2xK2s',INT(nd1.F)+' votos');k('r2xK3',P(100*nd1.L/C1,2));k('r2xK3s',INT(nd1.L)+' votos')}}
   {const tint=(id,ct,won)=>{const e=$(id),c=e&&e.closest('.r2Kpi');if(!c)return;c.classList.add('lvNeed');c.style.setProperty('--ct',(+ct||0).toFixed(3));c.classList.toggle('won',!!won)};
    tint('r2xK5',L?clamp((L.PF-.5)/.5,0,1):0,L&&(L.needF<0||L.mathF));tint('r2xK6',L?clamp((L.PL-.5)/.5,0,1):0,L&&(L.needL<0||L.mathL))}
   /* V11.10: diferença em pontos percentuais (apurado e projeção final) */
@@ -6499,6 +6509,15 @@ setTimeout(()=>govCycle(true).catch(()=>{}),1500);
 setInterval(()=>{if(Date.now()>=R2_START&&!document.hidden)govCycle().catch(()=>{})},60e3);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()>=R2_START)govCycle().catch(()=>{})});
 window.V8_gov={GOV,cycle:govCycle,state:govState,sim:govSimStart};
+
+/* V15.15 · aviso da prorrogação da votação (decisão do STF, 25/10) — some sozinho às 21h de Brasília */
+(function(){const END=Date.parse('2026-10-25T21:00:00-03:00');
+  function put(){try{if(Date.now()>END){const o=document.getElementById('v15Aviso');if(o)o.remove();return}
+    if(document.getElementById('v15Aviso'))return;const ref=document.getElementById('electionCountdown');if(!ref||!ref.parentNode)return;
+    const d=document.createElement('div');d.id='v15Aviso';d.setAttribute('role','status');
+    d.innerHTML='<span class="v15AvIc" aria-hidden="true">⚠️</span><div><b>Votação prorrogada até as 19h de Brasília (18h em Manaus)</b><span>Decisão do ministro Cristiano Zanin (STF) neste domingo, 25/10, para todas as seções do país. Os números do Brasil devem sair depois do novo horário; até lá podem aparecer só votos do exterior, que já foram apurados. O painel se atualiza sozinho.</span></div>';
+    ref.parentNode.insertBefore(d,ref)}catch(e){}}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',put,{once:true});else put();setTimeout(put,1200);setInterval(put,60e3)})();
 /* ===================== ORQUESTRAÇÃO ===================== */
 function setStatus(cls,html){const el=$('r2DataStatus');if(!el)return;el.className='r2Status '+cls;$('r2DataStatusText').innerHTML=html}
 function describeBase(){const b=S.base;if(!b)return;
